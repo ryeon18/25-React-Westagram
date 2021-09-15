@@ -1,0 +1,417 @@
+.Main {
+    nav {
+        width: 100%; 
+        height: 54px;
+        position: fixed;
+        z-index: 10;
+        background: #fff;
+        border-bottom: 1px solid #c7c7c7;
+    }
+    
+    .wrap {
+        display: flex;
+        width: 90%; 
+        height: 100%;
+        max-width: 1000px;
+        margin: auto;
+    }
+    
+    .wrap div {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .logo {  
+        flex-grow: 2;  
+        justify-content: flex-start;
+    }
+    .logo a {  font-size: 24px;  }
+    
+    .search { 
+        flex-grow: 1;
+        position: relative;
+        width: 500px; 
+    }
+    
+    .search input {
+        width: 100%; 
+        height: 40px;
+        padding-left: 10px;
+        font-size: 16px;
+        font-weight: 300;
+        border: 1px solid #c7c7c7;
+        border-radius: 3px;
+        background: #fafafa;
+    }
+    
+    .search span {
+        display: inline-block;
+        position: absolute;
+        top: 50%; 
+        left: 50%;
+        transform: translate(-50%,-50%);
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: #c7c7c7;
+    }
+    
+    .user {  
+        flex-grow: 2;  
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    .user a {
+        margin-left: 20px;
+        text-align: center;
+    }
+    
+    .user a img {  width: 25px  }
+    
+    
+    main {
+        display: flex;
+        justify-content: center;
+        background: #fafafa;
+    }
+    
+    section {
+        position: relative;
+        top: 54px;
+        left: 0;
+        max-width: 1000px;
+        padding-right: 30px;
+    }
+    
+    .contents {
+        background: #fafafa;
+    }
+    
+    .feed { 
+        width: 600px; 
+        margin-top: 30px;
+        background: #fff;
+        border-radius: 5px;
+        border: 1px solid #c7c7c7;
+    }
+    
+    .profile {
+        display: flex;
+        position: relative;
+        width: 100%;
+    }
+    
+    .profile div:first-child{  
+        margin-left: 20px;  
+    } 
+    
+    .profileImg {   
+        position: relative;
+        width: 70px;
+        height: 70px;
+        margin: 10px;
+        border: 3px solid transparent;
+        border-radius: 50%;
+        background-image: linear-gradient(#fff, #fff), 
+        linear-gradient(to right, red 0%,  orange 100%);
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+        overflow: hidden;
+        cursor: pointer;   
+    }
+    
+    .profileImg img {
+        position: absolute;
+        width: 90%;
+        border-radius: 50%;
+        top: 50%; left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    
+    
+    .name { 
+        font-weight: bold; 
+        line-height: 80px;
+        text-align: center;
+        cursor: pointer;
+    }
+    
+    .more {
+        position: absolute;
+        top: 0; 
+        right: 0;
+        margin-right: 20px;
+        line-height: 80px;
+        cursor: pointer;
+    }
+    
+    .feed .feed-img {
+        width: 100%;
+        max-width: 1000px;
+        overflow: hidden;
+    }
+        
+    .click-line {
+        display: flex;
+        position: relative;
+        width: 100%;
+    }
+    
+    .click-inner {
+        width:50%;
+        display: flex;
+    }
+    .click-inner div {
+        width: 9%;
+        margin: 10px;
+        cursor: pointer;
+    }
+    
+    .click-inner div:nth-child(2) {  
+        width: 8%; 
+        margin-left: 15px;  
+    }
+    
+    .save {  width:50%;}
+    
+    .save img{
+        position: absolute;
+        top: 0; 
+        right: 0;
+        margin: 10px 10px;
+        width: 4.2%;
+        cursor: pointer;
+    }
+    
+    .comment-view {   
+        padding: 10px 10px;
+    }
+    
+    .likeText {
+        padding-bottom: 5px;
+    }
+    
+    .comment li {
+        padding-top: 5px;
+    }
+    
+    .date {
+        padding-top: 20px;
+        font-size: 14px;
+        color: #8e8e8e;
+        cursor: pointer;
+    }
+    
+    
+    .write {
+        border-top: 1px solid #8e8e8e44;
+        margin-top: 10px;
+    }
+    
+    .writeInner {
+        display: flex;
+        width: 99%;
+        margin: 0 auto;
+    }
+    
+    .emoticon {
+        flex-grow: 1;
+        text-align: center;
+        line-height: 50px;
+        font-size: 35px;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .post {
+        flex-grow: 20;
+        height: 56px;
+        padding-left: 10px;
+        font-size: 16px;
+        text-overflow: ellipsis;
+        resize: none;
+    }
+    
+    .submit {
+        flex-grow: 1;
+        text-align: center;
+        line-height: 50px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #0095F6;
+        cursor: pointer;
+    }
+    
+    .submit:disabled {
+        color: #0094f656;
+    }
+    
+    
+    aside {
+        width: 350px;
+        height: 10px;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 84px; 
+        left: 0;   
+    }
+    
+    .myHome {
+        display: flex; 
+        position: relative;
+    }
+    
+    .myHomeImg {
+        position: relative;
+        width: 70px;
+        height: 70px;
+        margin: 10px;
+        border: 3px solid transparent;
+        border-radius: 50%;
+        background-image: linear-gradient(#fff, #fff), 
+        linear-gradient(to right, red 0%,  orange 100%);
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+        overflow: hidden;
+        cursor: pointer;  
+    }
+    
+    .myHomeImg img {
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%,-50%);
+        width: 90%;
+        border-radius: 50%;
+    }
+    
+    .myName p:first-child{
+        margin-top: 25px;
+        font-weight: bold;
+    }
+    
+    .myName p:last-child{
+        color: #8e8e8e;
+    }
+    
+    .myHome a {
+        position: absolute;
+        top: 35px;
+        right: 0;
+        margin-right: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #0095F6;
+    }
+    
+    .story {
+        height: 250px;
+        border-radius: 5px;
+        overflow: hidden;
+        overflow: scroll;
+        overflow-x: hidden;
+    }
+    
+    .story-txt {
+        display: flex;
+        justify-content: space-between;
+        height: 50px;
+    }
+    
+    .story-txt p, 
+    .recommend-txt p {  
+        padding: 15px;  
+        cursor: pointer;
+    }
+    
+    .story-txt :first-child {  color: #c5c5c5;  }
+    
+    .people {
+        display: flex;
+        width: 100%;
+        padding-left: 10px;
+    }
+    
+    .people-img {
+        width: 50px; 
+        height: 50px;
+        border-radius: 50%;
+        margin: 8px;
+        overflow: hidden;
+    }
+    
+    .people-name {
+        width: 20%;
+        text-align: left;
+    }
+    
+    .people-name p {
+        padding: 2px;
+    }
+    
+    .people-name p:first-child{
+        margin-top: 10px;
+        font-weight: bold;
+    }
+    
+    .people-name p:last-child{
+        color: #8e8e8e;
+    }
+    
+    .recommend {
+        height: 250px;
+        margin-top: 20px;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    
+    .recommend-txt {
+        display: flex;
+        justify-content: space-between;
+        height: 50px;
+    }
+    
+    .recommend-txt p {  
+        padding: 15px;  
+        cursor: pointer;
+    }
+    
+    .recommend-txt :nth-child(1) {  color: #c5c5c5;  }
+    
+    blockquote {
+        margin-top: 25px;
+        color: #c5c5c5;
+    }
+    blockquote ul {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    blockquote ul li {
+        padding: 3px;
+        margin-left: 5px;
+    }
+    
+    blockquote ul li:after{
+        content: '\00B7';
+        margin-left: 5px;
+    }
+    
+    blockquote ul li:last-child::after {  content: '';  }
+    
+    blockquote p {
+        text-align: left;
+        margin: 25px 10px;
+    } 
+    }
+    
+    @media screen and (max-width: 700px){   
+        .wrap .search {   display: none;  }
+    }
+    @media screen and (max-width: 1200px){   
+        .feed{  
+            margin: 30px auto; 
+            min-width: 650px;
+    }
+    
+        aside {  display: none;  }
+    }
