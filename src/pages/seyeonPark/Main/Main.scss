@@ -1,0 +1,435 @@
+.mainContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  /* --메뉴바 헤더 */
+  
+  .mainHearder {
+    position: fixed;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 7%;
+    border-bottom: 1px solid #ebebeb;
+    background-color: white;
+  }
+  
+  /* 메뉴바 인스타 로고 */
+  
+  .mainLogoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .logo {
+    display: inline;
+    padding-right: 10px;
+  }
+  
+  .h1 {
+    padding-left: 10px;
+    border-left: 1px solid black;
+    font-family: 'Lobster', cursive;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  /* 메뉴바 검색창 */
+  
+  .mainHearder input {
+    margin: 20px;
+    padding: 3px;
+    border: 1px solid #ebebeb;
+    width: 70%;
+    text-align: center;
+    background-color: #fafafa;
+  }
+  
+  #searchimg {
+    width: 5%;
+    height: 5%;
+  }
+  
+  .mainHearder {
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  
+    a {
+      padding: 5px;
+      padding-left: 10px;
+    }
+  }
+  
+  /* --메인-- */
+  
+  main {
+    display: flex;
+    justify-content: center;
+    padding-top: 120px;
+    width: 100%;
+    background-color: #fafafa;
+  }
+  
+  /* --피드-- */
+  
+  .feed {
+    border: 1px solid #ebebeb;
+  }
+  
+  /*  피드 헤드 */
+  
+  .feedHeader {
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    border-bottom: 1px solid #ebebeb;
+    height: 40px;
+  }
+  
+  /* 피드헤드 아이디 */
+  
+  .feediginfo {
+    padding-top: 2px;
+  }
+  
+  .feedHeaderIdImg {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+  
+    img {
+      padding: 2px;
+      width: 30px;
+      height: 30px;
+      border-radius: 80%;
+    }
+  }
+  
+  .feedidinfo {
+    span {
+      border: none;
+      padding-right: 250px;
+      padding-bottom: 20px;
+    }
+  
+    button {
+      border: none;
+      background-color: #fafafa;
+    }
+  
+    img {
+      width: 15px;
+    }
+  }
+  
+  /* 피드헤더 더보기 */
+  
+  /* 피드메인 이미지 */
+  
+  .feedMainimg {
+    width: 400px;
+    text-align: center;
+  
+    img {
+      width: 100%;
+      height: 400px;
+    }
+  }
+  
+  /* 피드 좋아요아이콘 */
+  
+  .feedIcons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 12px;
+  
+    button {
+      border: none;
+      background-color: #fafafa;
+    }
+  }
+  
+  /* 피드 좋아요 구간 */
+  
+  .feedComment {
+    padding: 10px;
+    font-size: 12px;
+  }
+  
+  .likeCheck {
+    padding-bottom: 20px;
+  }
+  
+  .message {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+  }
+  
+  /* 피드 댓글 추가 시간 */
+  
+  .moreComment, .commentTime {
+    padding-top: 4px;
+    text-decoration: none;
+    font-weight: normal;
+    color: #a7a7a7;
+  }
+  
+  .firstmessage {
+    padding-bottom: 5px;
+  }
+  
+  .secondMessage {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  /* 댓글창 */
+  
+  .inputComment {
+    display: flex;
+    justify-content: space-evenly;
+    border-top: 1px solid #ebebeb;
+    border-bottom: 1px solid #ebebeb;
+  }
+  
+  .input {
+    border: none;
+    padding: 10px;
+    width: 80%;
+    height: 40px;
+    background-color: #fafafa;
+  }
+  
+  .uploadButton {
+    border: none;
+    width: 50px;
+    height: 40px;
+    text-align: center;
+    color: #d9ebfc;
+    background-color: #fafafa;
+  
+    &:hover {
+      color: #80bcf5;
+    }
+  }
+  
+  .addedMessage p {
+    padding-bottom: 2px;
+  }
+  
+  /* --사이드-- */
+  
+  .main-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 30px;
+    width: 250px;
+  }
+  
+  /* 사이드 다른유저 */
+  
+  .sideUser {
+    display: flex;
+    align-items: center;
+    padding-bottom: 5px;
+    padding-top: 2px;
+    width: 150px;
+  }
+  
+  .userInfo, .sideUser a {
+    display: block;
+    margin: 2px;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 13px;
+    color: black;
+  }
+  
+  .userInfo2 {
+    display: block;
+    justify-content: center;
+    padding-top: 8px;
+    width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .sideUser span {
+    font-size: 12px;
+    color: #a7a7a7;
+  }
+  
+  .sideprofileimg {
+    margin-right: 10px;
+    width: 50px;
+    height: 30px;
+    border-radius: 80%;
+  }
+  
+  .showAll {
+    font-weight: bolder;
+    color: black;
+  }
+  
+  /* -- 메인 사이드 스토리 --*/
+  
+  .otherStory {
+    margin-bottom: 10px;
+    border: 1px solid #ebebeb;
+    padding: 10px;
+    width: 220px;
+    height: 180px;
+    font-size: 12px;
+    overflow: hidden;
+  }
+  
+  .otherStoryList {
+    display: flex;
+    flex-direction: column;
+    padding: 3px;
+  }
+  
+  .otherStoryHead {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px;
+  }
+  
+  .storyuser {
+    display: flex;
+    width: 150px;
+  
+    a {
+      display: flex;
+      width: 150px;
+      padding-bottom: 5px;
+      padding-top: 2px;
+      text-decoration: none;
+      color: black;
+    }
+  }
+  
+  .otherStory span {
+    color: #a7a7a7;
+  }
+  
+  #storyAll {
+    color: black;
+    font-weight: bold;
+  }
+  
+  .sideprofileimge2 {
+    margin-right: 10px;
+    padding: 1px;
+    border: 1px solid #d14a9c;
+    border-radius: 80%;
+    width: 40px;
+    height: 30px;
+  }
+  
+  /* --추천-- */
+  
+  .recommend {
+    margin-bottom: 10px;
+    border: 1px solid #ebebeb;
+    padding: 10px;
+    width: 220px;
+    height: 160px;
+    font-size: 12px;
+  }
+  
+  .sideRecommendList {
+    padding: 5px;
+  
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  
+    p {
+      padding-bottom: 3px;
+    }
+  
+    span {
+      text-decoration: none;
+      color: #a7a7a7;
+      font-size: 12px;
+      font-weight: normal;
+    }
+  }
+  
+  .sideRecommend {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px;
+    color: #a7a7a7;
+  }
+  
+  .followButton {
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    padding: 5px;
+    padding-top: 8px;
+    text-decoration: none;
+    font-size: 13px;
+  
+    a {
+      color: blue;
+      font-size: 13px;
+    }
+  }
+  
+  .recommendUser {
+    display: flex;
+    padding-bottom: 5px;
+    width: 200px;
+  }
+  
+  /* --footer-- */
+  
+  .footer {
+    display: flex;
+    flex-direction: column;
+    width: 180px;
+  
+    li, a {
+      display: inline;
+      text-decoration: none;
+      font-size: 11px;
+      color: #a7a7a7;
+    }
+  
+    li {
+      &::after {
+        padding-left: 3px;
+        padding-right: 3px;
+        content: "\00B7";
+        color: #a7a7a7;
+      }
+  
+      &:last-child:after {
+        content: " ";
+      }
+    }
+  
+    ul {
+      padding-bottom: 10px;
+    }
+  
+    p {
+      font-size: 13px;
+      color: #a7a7a7;
+    }
+  }
