@@ -1,0 +1,58 @@
+@import '../../../styles/variable.scss';
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 450px;
+  padding: 30px 0;
+  border: 2px solid $theme-color-border;
+  background-color: #ffffff;
+}
+
+#logo {
+  margin: 40px 0;
+  text-align: center;
+  font-family: 'Satisfy', cursive;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.login_form {
+  display: flex;
+  flex-direction: column;
+  margin: 50px 40px 0 40px;
+}
+
+.login {
+  height: 40px;
+  margin: 4px 0;
+  padding: 0 12px;
+  border: 2px solid $theme-color-border;
+  border-radius: 4px;
+  background-color: #fafafa;
+}
+
+.btn_login {
+  margin-top: 18px;
+  padding: 8px;
+  background-color: $theme-color-button;
+  border-radius: 4px;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  opacity: 0.4;
+}
+
+.find_pw {
+  display: block;
+  margin-top: 130px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: #013669;
+}
