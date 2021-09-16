@@ -26,6 +26,9 @@ class Login extends React.Component {
   };
 
   render() {
+    const enableBtn =
+      this.state.idValue.includes('@') && this.state.pwValue.length >= 5;
+
     return (
       <div className="container">
         <p id="logo">Westagram</p>
@@ -46,7 +49,12 @@ class Login extends React.Component {
             value={this.state.pwValue}
             onChange={this.handlePw}
           />
-          <button className="btn_login" type="button" onClick={this.goToMain}>
+          <button
+            className="btn_login"
+            type="button"
+            disabled={!enableBtn}
+            style={{ opacity: enableBtn ? 1 : 0.4 }}
+          >
             로그인
           </button>
         </form>
