@@ -5,12 +5,24 @@ import '../Login/Login.scss';
 import { withRouter } from 'react-router-dom';
 
 class Login extends React.Component {
-  goToMain = () => {
-    this.props.history.push('./main-minji');
+  constructor() {
+    super();
+    this.state = {
+      idValue: '',
+      pwValue: '',
+    };
+  }
+
+  handleId = e => {
+    this.setState({
+      idValue: e.target.value,
+    });
   };
 
-  handleInput = e => {
-    console.log(e);
+  handlePw = e => {
+    this.setState({
+      pwValue: e.target.value,
+    });
   };
 
   render() {
@@ -23,14 +35,16 @@ class Login extends React.Component {
             id="user_id"
             type="text"
             placeholder="전화번호, 사용자 이름 또는 이메일"
-            onChange={this.handleInput}
+            value={this.state.idValue}
+            onChange={this.handleId}
           />
           <input
             className="login login_pw"
             id="user_pw"
             type="password"
             placeholder="비밀번호"
-            onChange={this.handleInput}
+            value={this.state.pwValue}
+            onChange={this.handlePw}
           />
           <button className="btn_login" type="button" onClick={this.goToMain}>
             로그인
