@@ -1,9 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+ul li {
+  list-style: none;
+}
+html,
+body {
+  overflow-x: hidden;
+  height: 100%;
+}
+button,
+input {
+  background: #fff;
+  border: transparent;
+}
+.img-box > img {
+  width: 100%;
+  display: block;
+}
+.img-box > a > img {
+  width: 100%;
+  display: block;
+}
+.logo {
+  font-family: 'Lobster', cursive;
+}
+
 .Login {
-    width: 100vw;
-    height: 100vh;
-    background: #fafafa;
-  
-    
+  width: 100vw;
+  height: 100vh;
+  background: #fafafa;
+
   .wrap {
     height: 600px;
     min-width: 450px;
@@ -15,7 +48,7 @@
     background: #fff;
     border: 1px solid #ccc;
   }
-  
+
   .logo {
     margin: 22px auto 22px;
     text-align: center;
@@ -23,12 +56,13 @@
     font-size: 4rem;
     font-family: 'Lobster', cursive;
   }
-  
-  .loginForm, .loginBtn {
+
+  .loginForm,
+  .loginBtn {
     width: 70%;
     margin: 0 auto;
   }
-  
+
   .loginForm input {
     width: 100%;
     height: 56px;
@@ -39,13 +73,12 @@
     background: #f2f2f2;
     border: 1px solid #c5c1c1;
     border-radius: 4px;
-    
+
     &:nth-child(1) {
       margin-top: 40px;
     }
   }
 
-  
   .loginBtn button {
     width: 100%;
     height: 50px;
@@ -55,20 +88,20 @@
     font-weight: bold;
     border: 1px solid #ccc;
     border-radius: 10px;
-    background-color: #0095F6;
+    background-color: #0095f6;
     color: #fff;
     cursor: pointer;
     transition: all 0.3s ease-out;
-  
-     &:disabled {
+
+    &:disabled {
       background-color: #0094f656;
-    } 
+    }
   }
-  
+
   .loginForm input {
     font-size: 14px;
   }
-  
+
   .pwFind {
     font-size: 14px;
     width: 100%;
@@ -76,8 +109,6 @@
     left: 0;
     bottom: 40px;
     text-align: center;
-    color: #00376B;
+    color: #00376b;
   }
-
-
 }
