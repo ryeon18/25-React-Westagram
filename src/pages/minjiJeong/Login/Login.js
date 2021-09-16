@@ -25,6 +25,10 @@ class Login extends React.Component {
     });
   };
 
+  goToMain = () => {
+    this.props.history.push('/main-minji');
+  };
+
   render() {
     const enableBtn =
       this.state.idValue.includes('@') && this.state.pwValue.length >= 5;
@@ -54,6 +58,7 @@ class Login extends React.Component {
             type="button"
             disabled={!enableBtn}
             style={{ opacity: enableBtn ? 1 : 0.4 }}
+            onClick={this.goToMain}
           >
             로그인
           </button>
