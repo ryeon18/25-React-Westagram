@@ -1,0 +1,34 @@
+@import '../../../styles/variable.scss';
+
+.comments_row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  margin: 3px 0;
+}
+
+.comments_menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+
+  i {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.comment_like {
+  margin-right: 0;
+  transition: all ease 0.3s;
+  color: $theme-color-border;
+}
+
+.comment_delete {
+  margin-left: 8px;
+  color: $theme-color-border;
+}

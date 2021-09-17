@@ -1,4 +1,5 @@
 import React from 'react';
+import Comment from '../Main/Comment';
 import '../Main/Main.scss';
 import '../../../styles/reset.scss';
 import '../../../styles/common.scss';
@@ -6,7 +7,7 @@ import '../../../styles/common.scss';
 class Main extends React.Component {
   constructor() {
     super();
-    this.state = { content: '', commentList: [] };
+    this.state = { content: '', commentList: [], userId: '_minji.jeong' };
   }
 
   getComment = e => {
@@ -150,12 +151,11 @@ class Main extends React.Component {
                     ></i>
                   </div>
                 </div>
-                {/* 새 댓글 달릴 위치 */}
+                {/* 새 댓글 위치 */}
                 {this.state.commentList.map(el => {
-                  console.log('mapmapmapmapmapmapmap');
-                  console.log(this.state.commentList);
-                  console.log(el);
-                  return <li>{el.text}</li>;
+                  return (
+                    <Comment userId={this.state.userId} content={el.text} />
+                  );
                 })}
               </div>
               <div className="time_ago">
@@ -166,13 +166,12 @@ class Main extends React.Component {
                   cols="30"
                   rows="1"
                   placeholder="댓글 달기..."
-                  // ref={this.commentValue}
                   onChange={this.getComment}
+                  value={this.state.content}
                 ></textarea>
                 <button
                   className="btn_upload"
                   type="button"
-                  // onClick={this.uploadComment}
                   onClick={this.uploadComment}
                 >
                   게시
@@ -189,7 +188,7 @@ class Main extends React.Component {
                 src="images/minjiJeong/me.jpg"
               />
               <div>
-                <h5 className="my_id user_id">_minji.jeong</h5>
+                <h5 className="my_id user_id">{this.state.userId}</h5>
                 <h5 className="user_description">정민지</h5>
               </div>
             </div>

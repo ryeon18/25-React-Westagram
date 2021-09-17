@@ -274,35 +274,6 @@ nav {
   font-size: 14px;
 }
 
-.comments_row {
-  @include flex-space-between;
-  flex-direction: row;
-  width: 100%;
-  margin: 3px 0;
-}
-
-.comments_menu {
-  @include flex-center;
-  flex-direction: row;
-
-  i {
-    &:hover {
-      cursor: pointer;
-    }
-  }
-}
-
-.comment_like {
-  margin-right: 0;
-  transition: all ease 0.3s;
-  color: $theme-color-border;
-}
-
-.comment_delete {
-  margin-left: 8px;
-  color: $theme-color-border;
-}
-
 .time_ago {
   margin-bottom: 10px;
   padding: 4px 15px;
