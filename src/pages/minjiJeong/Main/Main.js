@@ -4,6 +4,22 @@ import '../../../styles/reset.scss';
 import '../../../styles/common.scss';
 
 class Main extends React.Component {
+  constructor() {
+    super();
+    this.state = { content: '', commentList: [] };
+  }
+
+  getComment = e => {
+    this.setState({
+      content: e.target.value,
+    });
+  };
+
+  uploadComment = e => {
+    this.state.commentList.push({ text: this.state.content });
+    this.setState({ content: '' });
+  };
+
   render() {
     return (
       <>
@@ -27,10 +43,10 @@ class Main extends React.Component {
             </div>
           </div>
           <div className="nav_column">
-            <a>
+            <a href="/">
               <img alt="icon_explore" src="images/minjiJeong/explore.png" />
             </a>
-            <a>
+            <a href="/">
               <img alt="icon_like" src="images/minjiJeong/heart.png" />
             </a>
             <a
@@ -134,6 +150,13 @@ class Main extends React.Component {
                     ></i>
                   </div>
                 </div>
+                {/* 새 댓글 달릴 위치 */}
+                {this.state.commentList.map(el => {
+                  console.log('mapmapmapmapmapmapmap');
+                  console.log(this.state.commentList);
+                  console.log(el);
+                  return <li>{el.text}</li>;
+                })}
               </div>
               <div className="time_ago">
                 <span className="pass_time">42</span>분 전
@@ -143,8 +166,15 @@ class Main extends React.Component {
                   cols="30"
                   rows="1"
                   placeholder="댓글 달기..."
+                  // ref={this.commentValue}
+                  onChange={this.getComment}
                 ></textarea>
-                <button className="btn_upload" type="button">
+                <button
+                  className="btn_upload"
+                  type="button"
+                  // onClick={this.uploadComment}
+                  onClick={this.uploadComment}
+                >
                   게시
                 </button>
               </div>
