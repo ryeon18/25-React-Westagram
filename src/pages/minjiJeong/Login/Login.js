@@ -41,6 +41,7 @@ class Login extends React.Component {
             className="login login_id"
             id="user_id"
             type="text"
+            autoComplete="off"
             placeholder="전화번호, 사용자 이름 또는 이메일"
             value={this.state.idValue}
             onChange={this.handleId}
@@ -49,6 +50,7 @@ class Login extends React.Component {
             className="login login_pw"
             id="user_pw"
             type="password"
+            autoComplete="off"
             placeholder="비밀번호"
             value={this.state.pwValue}
             onChange={this.handlePw}

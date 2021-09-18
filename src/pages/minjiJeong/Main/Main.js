@@ -21,6 +21,12 @@ class Main extends React.Component {
     this.setState({ content: '' });
   };
 
+  handleEnter = e => {
+    if (e.code === 'Enter') {
+      this.uploadComment();
+    }
+  };
+
   render() {
     return (
       <>
@@ -167,6 +173,7 @@ class Main extends React.Component {
                   rows="1"
                   placeholder="댓글 달기..."
                   onChange={this.getComment}
+                  onKeyPress={this.handleEnter}
                   value={this.state.content}
                 ></textarea>
                 <button
