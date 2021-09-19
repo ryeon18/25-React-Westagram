@@ -7,7 +7,11 @@ import '../../../styles/common.scss';
 class Main extends React.Component {
   constructor() {
     super();
-    this.state = { content: '', commentList: [], userId: '_minji.jeong' };
+    this.state = {
+      userId: '_minji.jeong',
+      commentList: [],
+      content: '',
+    };
   }
 
   getComment = e => {
@@ -17,7 +21,10 @@ class Main extends React.Component {
   };
 
   uploadComment = e => {
-    this.state.commentList.push({ text: this.state.content });
+    this.state.commentList.push({
+      text: this.state.content,
+      like: this.state.isLiked,
+    });
     this.setState({ content: '' });
   };
 
@@ -125,39 +132,7 @@ class Main extends React.Component {
                 <span className="show_more">더 보기</span>
               </div>
               <div className="article_comments">
-                <div className="comments_row">
-                  <p>
-                    <span className="user_id">acid_rain</span>가게 어딘지
-                    알려주세요! 🙏
-                  </p>
-                  <div className="comments_menu">
-                    <i
-                      className="comment_like far fa-heart"
-                      onclick="toggleLike(this)"
-                    ></i>
-                    <i
-                      className="comment_delete far fa-trash-alt"
-                      onclick="deleteComment(this)"
-                    ></i>
-                  </div>
-                </div>
-                <div className="comments_row">
-                  <p>
-                    <span className="user_id">fairy_yoon</span>다음엔 나도
-                    데리고가요~
-                  </p>
-                  <div className="comments_menu">
-                    <i
-                      className="comment_like far fa-heart"
-                      onclick="toggleLike(this)"
-                    ></i>
-                    <i
-                      className="comment_delete far fa-trash-alt"
-                      onclick="deleteComment(this)"
-                    ></i>
-                  </div>
-                </div>
-                {/* 새 댓글 위치 */}
+                {/* 추가된 댓글 위치 */}
                 {this.state.commentList.map(el => {
                   return (
                     <Comment userId={this.state.userId} content={el.text} />
