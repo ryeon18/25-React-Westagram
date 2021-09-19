@@ -11,6 +11,7 @@ class Main extends React.Component {
       userId: '_minji.jeong',
       commentList: [],
       content: '',
+      isVisible: false,
     };
   }
 
@@ -67,20 +68,28 @@ class Main extends React.Component {
             </div>
           </div>
           <div className="nav_column">
-            <a href="/">
+            <button>
               <img alt="icon_explore" src="images/minjiJeong/explore.png" />
-            </a>
-            <a href="/">
+            </button>
+            <button>
               <img alt="icon_like" src="images/minjiJeong/heart.png" />
-            </a>
-            <a
+            </button>
+            <button
               className="btn_profile"
               href="/"
               alt="icon_profile"
+              onClick={() => {
+                this.setState({
+                  isVisible: !this.state.isVisible,
+                });
+              }}
               style={{ position: 'relative' }}
             >
               <img src="images/minjiJeong/profile.png" alt="img_profile" />
-              <div className="menu_box">
+              <div
+                className="menu_box"
+                style={{ display: this.state.isVisible ? 'block' : 'none' }}
+              >
                 <div className="menu_box_arrow"></div>
                 <div className="menu_box_column">
                   <i className="far fa-user-circle"></i>
@@ -96,7 +105,7 @@ class Main extends React.Component {
                 </div>
                 <div className="menu_box_column">로그아웃</div>
               </div>
-            </a>
+            </button>
           </div>
         </nav>
         <div className="main_container">

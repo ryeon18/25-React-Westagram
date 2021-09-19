@@ -67,10 +67,10 @@ nav {
 }
 
 .nav_column {
-  a {
+  button {
     img {
       width: 26px;
-      margin: 0 10px;
+      margin: 0 5px;
     }
   }
 }
@@ -124,10 +124,9 @@ nav {
 
 /*Profile Menu Modal*/
 .menu_box {
-  display: none;
   @include modal;
-  top: 34px;
-  right: -15px;
+  top: 45px;
+  right: -14px;
 }
 
 .menu_box_arrow {
@@ -136,9 +135,9 @@ nav {
 }
 
 .menu_box_column {
-  padding: 14px;
+  padding: 14px 20px;
   font-size: 14px;
-
+  text-align: left;
   i {
     transform: scale(1.2);
     margin-right: 5px;
@@ -164,7 +163,7 @@ nav {
   display: flex;
   flex-direction: row;
   flex: 1;
-  padding: 300px 120px 50px 120px;
+  padding: 280px 120px 50px 120px;
 }
 
 /*게시글*/
