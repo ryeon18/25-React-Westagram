@@ -34,6 +34,16 @@ class Main extends React.Component {
     }
   };
 
+  removeComment = list => {
+    const newArr = this.state.commentList.filter(
+      item => item.text !== list.props.content
+    );
+
+    this.setState({
+      commentList: newArr,
+    });
+  };
+
   render() {
     return (
       <>
@@ -135,7 +145,11 @@ class Main extends React.Component {
                 {/* 추가된 댓글 위치 */}
                 {this.state.commentList.map(el => {
                   return (
-                    <Comment userId={this.state.userId} content={el.text} />
+                    <Comment
+                      userId={this.state.userId}
+                      content={el.text}
+                      removeComment={this.removeComment}
+                    />
                   );
                 })}
               </div>

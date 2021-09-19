@@ -18,7 +18,6 @@ class Comment extends React.Component {
   };
 
   render() {
-    console.log(this.props);
     return (
       <div className="comments_row">
         <p>
@@ -34,7 +33,12 @@ class Comment extends React.Component {
             }
             onClick={this.toggleLike}
           ></i>
-          <i className="comment_delete far fa-trash-alt" onClick={() => {}}></i>
+          <i
+            className="comment_delete far fa-trash-alt"
+            onClick={() => {
+              this.props.removeComment(this);
+            }}
+          ></i>
         </div>
       </div>
     );
