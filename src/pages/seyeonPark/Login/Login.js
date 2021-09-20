@@ -3,11 +3,27 @@ import '../../../pages/seyeonPark/Login/Login.scss';
 import '../../../styles/common.scss';
 import '../../../styles/reset.scss';
 import '../../../styles/variable.scss';
-import { withRouter } from 'react-router-dom';
+// import { withRouter } from 'react-router-dom';
 
 class Login extends React.Component {
-  goToMain = () => {
-    this.props.history.push('/main-seyeon');
+  constructor() {
+    super();
+    this.state = {
+      inputIdValue: '',
+      inputPwValue: '',
+    };
+  }
+
+  handleIdInput = event => {
+    this.setState({
+      inputIdValue: event.target.value,
+    });
+  };
+
+  handlePwInput = event => {
+    this.setState({
+      inputPwValue: event.target.value,
+    });
   };
 
   activeButton = () => {
@@ -30,6 +46,10 @@ class Login extends React.Component {
     return conditions ? activeBtn() : inActiveBtn();
   };
 
+  goToMain = () => {
+    this.props.history.push('/main-seyeon');
+  };
+
   render() {
     return (
       <div className="loginContainer">
@@ -40,16 +60,18 @@ class Login extends React.Component {
             className="logininput"
             type="text"
             placeholder="전화번호, 사용자 이름 또는 이메일"
-            onKeyUp={this.activeButton}
+            onChange={this.handleIdInput}
+            onKeyPress={this.activeButton}
           />
           <input
             id="pw"
             className="logininput"
             type="password"
             placeholder="비밀번호"
-            onKeyUp={this.activeButton}
+            onChange={this.handlePwInput}
+            onKeyPress={this.activeButton}
           />
-          <button class="button" onClick={this.goToMain}>
+          <button className="button" onClick={this.goToMain}>
             로그인
           </button>
           <span>비밀번호를 잊으셨나요?</span>
@@ -59,4 +81,4 @@ class Login extends React.Component {
   }
 }
 
-export default withRouter(Login);
+export default Login;
