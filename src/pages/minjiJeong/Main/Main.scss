@@ -1,4 +1,5 @@
 @import '../../../styles/variable.scss';
+@import '//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css';
 
 @mixin flex-center {
   display: flex;
@@ -13,7 +14,7 @@
 }
 
 @mixin modal {
-  width: 250px;
+  width: 230px;
   position: absolute;
   height: fit-content;
   background-color: #ffffff;
@@ -77,22 +78,15 @@ nav {
 
 /*Search Id Modal*/
 .search_result_box {
-  display: none;
   @include modal;
   top: 52px;
-  left: 0px;
+  left: 5px;
   min-height: 50px;
-}
 
-.search_result_arrow {
-  @include modal-arrow;
-  left: 50%;
-}
-
-.search_result_box {
   ul {
     li {
-      @include flex-center;
+      display: flex;
+      justify-content: flex-start;
       flex-direction: row;
       padding: 15px 12px;
       border-bottom: 1px solid $theme-color-border;
@@ -109,17 +103,9 @@ nav {
   }
 }
 
-.btn_init {
-  display: none;
-  position: absolute;
-  top: 24%;
-  right: 3%;
-  transform: scale(0.9);
-  color: rgba(0, 0, 0, 0.2);
-
-  &:hover {
-    cursor: pointer;
-  }
+.search_result_arrow {
+  @include modal-arrow;
+  left: 50%;
 }
 
 /*Profile Menu Modal*/
@@ -152,10 +138,10 @@ nav {
   width: 240px;
   padding: 5px 4px;
   text-align: center;
-  font-family: Font Awesome 5 Free;
   border: 2px solid $theme-color-border;
   background-color: #fbfbfb;
   border-radius: 4px;
+  font-weight: 600;
 }
 
 /*Main Contents*/
@@ -333,6 +319,7 @@ nav {
   margin-top: 6px;
   color: rgba(0, 0, 0, 0.4);
   font-weight: 600;
+  font-size: 13px;
 }
 
 /*스토리*/
@@ -406,15 +393,12 @@ nav {
   @include flex-space-between;
   flex-direction: row;
   margin-bottom: 10px;
-}
 
-.recommend_row {
   div {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     width: 65%;
-    padding-left: 10px;
   }
 }
 

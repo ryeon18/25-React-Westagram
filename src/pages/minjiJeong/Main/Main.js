@@ -1,13 +1,53 @@
 import React from 'react';
-import Comment from '../Main/Comment';
+import Comment from './Comment';
+import FilteredUser from './FilteredUser';
 import '../Main/Main.scss';
 import '../../../styles/reset.scss';
 import '../../../styles/common.scss';
+
+const userList = [
+  {
+    id: 'up_enery_bar',
+    description: '난 에너지바',
+    image: 'images/minjiJeong/energy.jpg',
+  },
+  {
+    id: 'deli_cious.pizza',
+    description: '맛있는 야채 피자',
+    image: 'images/minjiJeong/pizza.jpg',
+  },
+  {
+    id: 'im.tendong_',
+    description: 'JMT 텐동',
+    image: 'images/minjiJeong/tendong.jpg',
+  },
+  {
+    id: 'im.yellow_peaaach',
+    description: '노랑 복숭아 탄산',
+    image: 'images/minjiJeong/juice.jpg',
+  },
+  {
+    id: 'gunchim_loopy',
+    description: '군침이 싹도노',
+    image: 'images/minjiJeong/cake.jpg',
+  },
+  {
+    id: '__bingsuya',
+    description: '틈헤이러 빙수',
+    image: 'images/minjiJeong/bingsu.jpg',
+  },
+  {
+    id: 'cheers_beers_',
+    description: '치어스비어스 홍대 1호점',
+    image: 'images/minjiJeong/beer.jpg',
+  },
+];
 
 class Main extends React.Component {
   constructor() {
     super();
     this.state = {
+      filteredList: [],
       userId: '_minji.jeong',
       commentList: [],
       content: '',
@@ -45,12 +85,22 @@ class Main extends React.Component {
     });
   };
 
+  filterUser = e => {
+    const filtered = userList.filter(user => user.id.includes(e.target.value));
+
+    this.setState({
+      filteredList: filtered.length === userList.length ? [] : filtered,
+    });
+  };
+
   render() {
     return (
       <>
         <link
           rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+          href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+          integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+          crossorigin="anonymous"
         />
         <nav>
           <div className="nav_column">
@@ -60,11 +110,32 @@ class Main extends React.Component {
             </a>
           </div>
           <div className="nav_column">
-            <input className="search" type="text" placeholder="검색" />
-            <i className="btn_init fas fa-times-circle"></i>
-            <div className="search_result_box">
+            <input
+              className="search"
+              type="text"
+              placeholder="검색"
+              onChange={this.filterUser}
+              value={this.state.userInput}
+            />
+            <div
+              className="search_result_box"
+              style={{
+                display:
+                  this.state.filteredList.length === 0 ? 'none' : 'block',
+              }}
+            >
               <div className="search_result_arrow"></div>
-              <ul></ul>
+              <ul>
+                {this.state.filteredList.map(el => {
+                  return (
+                    <FilteredUser
+                      image={el.image}
+                      userId={el.id}
+                      description={el.description}
+                    />
+                  );
+                })}
+              </ul>
             </div>
           </div>
           <div className="nav_column">
