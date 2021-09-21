@@ -1,53 +1,16 @@
 import React from 'react';
-import Comment from './Comment';
-import FilteredUser from './FilteredUser';
-import '../Main/Main.scss';
+import Comment from './Comment/Comment';
+import SearchUser from './SearchUser/SearchUser';
+import ProgramInfo from './ProgramInfo/ProgramInfo';
+import INFO_LIST from './ProgramInfo/programInfoData';
+import './Main.scss';
 import '../../../styles/reset.scss';
 import '../../../styles/common.scss';
-
-const userList = [
-  {
-    id: 'up_enery_bar',
-    description: '난 에너지바',
-    image: 'images/minjiJeong/energy.jpg',
-  },
-  {
-    id: 'deli_cious.pizza',
-    description: '맛있는 야채 피자',
-    image: 'images/minjiJeong/pizza.jpg',
-  },
-  {
-    id: 'im.tendong_',
-    description: 'JMT 텐동',
-    image: 'images/minjiJeong/tendong.jpg',
-  },
-  {
-    id: 'im.yellow_peaaach',
-    description: '노랑 복숭아 탄산',
-    image: 'images/minjiJeong/juice.jpg',
-  },
-  {
-    id: 'gunchim_loopy',
-    description: '군침이 싹도노',
-    image: 'images/minjiJeong/cake.jpg',
-  },
-  {
-    id: '__bingsuya',
-    description: '틈헤이러 빙수',
-    image: 'images/minjiJeong/bingsu.jpg',
-  },
-  {
-    id: 'cheers_beers_',
-    description: '치어스비어스 홍대 1호점',
-    image: 'images/minjiJeong/beer.jpg',
-  },
-];
 
 class Main extends React.Component {
   constructor() {
     super();
     this.state = {
-      filteredList: [],
       userId: '_minji.jeong',
       commentList: [],
       content: '',
@@ -84,14 +47,6 @@ class Main extends React.Component {
     });
   };
 
-  filterUser = e => {
-    const filtered = userList.filter(user => user.id.includes(e.target.value));
-
-    this.setState({
-      filteredList: filtered.length === userList.length ? [] : filtered,
-    });
-  };
-
   render() {
     return (
       <>
@@ -109,33 +64,7 @@ class Main extends React.Component {
             </a>
           </div>
           <div className="nav_column">
-            <input
-              className="search"
-              type="text"
-              placeholder="검색"
-              onChange={this.filterUser}
-            />
-            <div
-              className="search_result_box"
-              style={{
-                display:
-                  this.state.filteredList.length === 0 ? 'none' : 'block',
-              }}
-            >
-              <div className="search_result_arrow"></div>
-              <ul>
-                {this.state.filteredList.map((el, index) => {
-                  return (
-                    <FilteredUser
-                      key={index}
-                      image={el.image}
-                      userId={el.id}
-                      description={el.description}
-                    />
-                  );
-                })}
-              </ul>
-            </div>
+            <SearchUser />
           </div>
           <div className="nav_column">
             <button>
@@ -223,7 +152,6 @@ class Main extends React.Component {
               <div className="article_comments">
                 {/* 추가된 댓글 위치 */}
                 {this.state.commentList.map((el, index) => {
-                  console.log(this.state);
                   return (
                     <Comment
                       key={index}
@@ -395,39 +323,9 @@ class Main extends React.Component {
             {/* 프로그램 정보 */}
             <div className="program_info">
               <ul>
-                <li className="program_info_list">
-                  <a href="/">Instagram 정보</a>
-                </li>
-                <li className="program_info_list">
-                  <a href="/">지원</a>
-                </li>
-                <li className="program_info_list">
-                  <a href="/">홍보 센터</a>
-                </li>
-                <li className="program_info_list">
-                  <a href="/">API</a>
-                </li>
-                <li className="program_info_list">
-                  <a href="/">채용 정보</a>
-                </li>
-                <li className="program_info_list">
-                  <a href="/">개인정보처리방침</a>
-                </li>
-                <li className="program_info_list">
-                  <a href="/">약관</a>
-                </li>
-                <li className="program_info_list">
-                  <a href="/">디렉터리</a>
-                </li>
-                <li className="program_info_list">
-                  <a href="/">프로필</a>
-                </li>
-                <li className="program_info_list">
-                  <a href="/">해시태그</a>
-                </li>
-                <li className="program_info_list">
-                  <a href="/">언어</a>
-                </li>
+                {INFO_LIST.map((el, index) => {
+                  return <ProgramInfo key={index} content={el.content} />;
+                })}
               </ul>
               <span>&#169; 2019 INSTAGRAM</span>
             </div>

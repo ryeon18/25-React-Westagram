@@ -1,7 +1,5 @@
 import React from 'react';
-import '../Main/Comment.scss';
-import '../../../styles/reset.scss';
-import '../../../styles/common.scss';
+import './Comment.scss';
 
 class Comment extends React.Component {
   constructor() {

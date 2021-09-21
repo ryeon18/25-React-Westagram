@@ -1,0 +1,32 @@
+@import '../Main.scss';
+
+.search_result_box {
+  @include modal;
+  top: 52px;
+  left: 5px;
+  min-height: 50px;
+
+  ul {
+    li {
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: row;
+      padding: 15px 12px;
+      border-bottom: 1px solid $theme-color-border;
+      font-size: 14px;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+.search_result_arrow {
+  @include modal-arrow;
+  left: 50%;
+}
