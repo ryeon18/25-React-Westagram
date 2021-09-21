@@ -64,7 +64,6 @@ class Main extends React.Component {
   uploadComment = e => {
     this.state.commentList.push({
       text: this.state.content,
-      like: this.state.isLiked,
     });
     this.setState({ content: '' });
   };
@@ -75,9 +74,9 @@ class Main extends React.Component {
     }
   };
 
-  removeComment = list => {
+  removeComment = deleteList => {
     const newArr = this.state.commentList.filter(
-      item => item.text !== list.props.content
+      (item, index) => index !== deleteList.props.listId
     );
 
     this.setState({
@@ -100,7 +99,7 @@ class Main extends React.Component {
           rel="stylesheet"
           href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
           integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
-          crossorigin="anonymous"
+          crossOrigin="anonymous"
         />
         <nav>
           <div className="nav_column">
@@ -115,7 +114,6 @@ class Main extends React.Component {
               type="text"
               placeholder="검색"
               onChange={this.filterUser}
-              value={this.state.userInput}
             />
             <div
               className="search_result_box"
@@ -126,9 +124,10 @@ class Main extends React.Component {
             >
               <div className="search_result_arrow"></div>
               <ul>
-                {this.state.filteredList.map(el => {
+                {this.state.filteredList.map((el, index) => {
                   return (
                     <FilteredUser
+                      key={index}
                       image={el.image}
                       userId={el.id}
                       description={el.description}
@@ -223,9 +222,12 @@ class Main extends React.Component {
               </div>
               <div className="article_comments">
                 {/* 추가된 댓글 위치 */}
-                {this.state.commentList.map(el => {
+                {this.state.commentList.map((el, index) => {
+                  console.log(this.state);
                   return (
                     <Comment
+                      key={index}
+                      listId={index}
                       userId={this.state.userId}
                       content={el.text}
                       removeComment={this.removeComment}
