@@ -1,37 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-a {
-  text-decoration: none;
-  color: #000;
-}
-ul li {
-  list-style: none;
-}
-html,
-body {
-  overflow-x: hidden;
-  height: 100%;
-}
-button,
-input {
-  background: #fff;
-  border: transparent;
-}
-.img-box > img {
-  width: 100%;
-  display: block;
-}
-.img-box > a > img {
-  width: 100%;
-  display: block;
-}
-.logo {
-  font-family: 'Lobster', cursive;
-}
-
 .Login {
   width: 100vw;
   height: 100vh;
@@ -73,6 +39,7 @@ input {
     background: #f2f2f2;
     border: 1px solid #c5c1c1;
     border-radius: 4px;
+    font-size: 14px;
 
     &:nth-child(1) {
       margin-top: 40px;
@@ -98,10 +65,6 @@ input {
     }
   }
 
-  .loginForm input {
-    font-size: 14px;
-  }
-
   .pwFind {
     font-size: 14px;
     width: 100%;
@@ -111,4 +74,41 @@ input {
     text-align: center;
     color: #00376b;
   }
+}
+
+/*---------------------------------*/
+/*개인 Common.sass*/
+/*---------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+ul li {
+  list-style: none;
+}
+html,
+body {
+  overflow-x: hidden;
+  height: 100%;
+}
+button,
+input {
+  background: #fff;
+  border: transparent;
+}
+.img-box > img {
+  width: 100%;
+  display: block;
+}
+.img-box > a > img {
+  width: 100%;
+  display: block;
+}
+.logo {
+  font-family: 'Lobster', cursive;
 }

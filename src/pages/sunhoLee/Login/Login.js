@@ -5,19 +5,24 @@ import '../Login/Login.scss';
 import '../../../styles/common.scss';
 
 class Login extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      idValue: '',
+      pwValue: '',
+    };
+  }
+
+  handleIdInput = e => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  };
+
   goToMain = () => {
     this.props.history.push('/main-sunho');
   };
 
-  checkPassword() {
-    const id = document.getElementById('userId');
-    const pw = document.getElementById('password');
-    const button = document.getElementsByTagName('button')[0];
-    const inputTag = document.getElementsByTagName('input')[0];
-    id.value.indexOf('@') >= 0 && pw.value.length >= 5
-      ? (button.disabled = false)
-      : (button.disabled = true);
-  }
   render() {
     return (
       <>
@@ -30,13 +35,15 @@ class Login extends React.Component {
                   type="text"
                   id="userId"
                   placeholder="전화번호, 사용자 이름 또는 이메일"
-                  onKeyUp={this.checkPassword}
+                  onChange={this.handleIdInput}
+                  name="idValue"
                 />
                 <input
                   type="password"
                   id="password"
                   placeholder="비밀번호"
-                  onKeyUp={this.checkPassword}
+                  onChange={this.handleIdInput}
+                  name="pwValue"
                 />
               </form>
               <div className="loginBtn">
