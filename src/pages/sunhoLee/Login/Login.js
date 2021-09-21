@@ -10,17 +10,35 @@ class Login extends React.Component {
     this.state = {
       idValue: '',
       pwValue: '',
+      isButtonOn: false,
     };
   }
 
   handleIdInput = e => {
+    const { name, value } = e.target;
     this.setState({
-      [e.target.name]: e.target.value,
+      [name]: value,
     });
   };
 
+  handleButton = () => {
+    const { idValue, pwValue } = this.state;
+    idValue.includes('@') && pwValue.length > 5
+      ? this.setState({ isButtonOn: true })
+      : this.setState({ isButtonOn: false });
+  };
+
   goToMain = () => {
-    this.props.history.push('/main-sunho');
+    const { isButtonOn, idValue } = this.state;
+    if (isButtonOn) {
+      if (idValue.length >= 8 && idValue.indexOf('@')) {
+        this.props.history.push('/main-sunho');
+      } else {
+        alert('아이디를 다시 확인하세요');
+      }
+    } else {
+      alert('비밀번호를 다시 확인하세요');
+    }
   };
 
   render() {
@@ -36,6 +54,7 @@ class Login extends React.Component {
                   id="userId"
                   placeholder="전화번호, 사용자 이름 또는 이메일"
                   onChange={this.handleIdInput}
+                  onKeyUp={this.handleButton}
                   name="idValue"
                 />
                 <input
@@ -43,15 +62,17 @@ class Login extends React.Component {
                   id="password"
                   placeholder="비밀번호"
                   onChange={this.handleIdInput}
+                  onKeyUp={this.handleButton}
                   name="pwValue"
                 />
               </form>
               <div className="loginBtn">
-                <Link to="/main-sunho">
-                  <button onClick={this.goToMain} disabled>
-                    로그인
-                  </button>
-                </Link>
+                <button
+                  onClick={this.goToMain}
+                  className={this.state.isButtonOn ? 'buttonOn' : 'buttonOff'}
+                >
+                  로그인
+                </button>
               </div>
             </div>
             <a href="#" className="pwFind" onClick={this.goToMain}>

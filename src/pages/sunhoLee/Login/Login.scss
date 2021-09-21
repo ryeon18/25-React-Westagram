@@ -55,14 +55,16 @@
     font-weight: bold;
     border: 1px solid #ccc;
     border-radius: 10px;
-    background-color: #0095f6;
     color: #fff;
     cursor: pointer;
     transition: all 0.3s ease-out;
+  }
 
-    &:disabled {
-      background-color: #0094f656;
-    }
+  .buttonOn {
+    background-color: #0095f6;
+  }
+  .buttonOff {
+    background-color: #0094f656;
   }
 
   .pwFind {
