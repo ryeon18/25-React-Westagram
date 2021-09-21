@@ -1,41 +1,35 @@
-@import '../../../../styles/variable.scss';
+@import '../Main.scss';
 
-.comments_row {
+.article_comments {
+  @include flex-center;
+  flex-direction: column;
+  padding: 0 15px;
+  font-size: 14px;
+}
+
+.time_ago {
+  margin-bottom: 10px;
+  padding: 4px 15px;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.add_comment {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   flex-direction: row;
-  width: 100%;
-  margin: 3px 0;
-}
+  border-top: 1px solid $theme-color-border;
 
-.comments_menu {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-
-  i {
-    &:hover {
-      cursor: pointer;
-    }
-  }
-
-  .fas {
-    color: #ed4956;
-  }
-
-  .far {
-    color: $theme-color-border;
+  textarea {
+    width: 88%;
+    padding: 16px 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
 }
 
-.comment_like {
-  margin-right: 0;
-  transition: all ease 0.3s;
-}
-
-.comment_delete {
-  margin-left: 8px;
-  color: $theme-color-border;
+.btn_upload {
+  flex: 1;
+  font-weight: bold;
+  opacity: 0.4;
+  color: $theme-color-button;
 }
