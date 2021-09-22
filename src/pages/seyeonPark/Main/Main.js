@@ -137,7 +137,7 @@ class Main extends React.Component {
                     nature
                   </a>
                   님
-                  <a class="message" href="/">
+                  <a className="message" href="/">
                     외 900명
                   </a>
                   이 좋아합니다
