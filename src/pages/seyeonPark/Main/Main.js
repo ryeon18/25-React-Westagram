@@ -4,7 +4,7 @@ import '../../../styles/common.scss';
 import '../../../styles/reset.scss';
 import '../../../styles/variable.scss';
 // import { Link } from 'react-router-dom';
-
+import Comment from '../components/Comment';
 class Main extends React.Component {
   constructor() {
     super();
@@ -168,9 +168,7 @@ class Main extends React.Component {
                 </div>
               </div>
               <div className="feedMessage">
-                {this.state.commentBox.map((comment, indx) => (
-                  <p key={indx}>{comment.commentValue}</p>
-                ))}
+                <Comment commentBox={this.state.commentBox} />
               </div>
               <div className="commentTime">
                 <span>42분전</span>
