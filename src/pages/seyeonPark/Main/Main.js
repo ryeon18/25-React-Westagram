@@ -6,35 +6,31 @@ import '../../../styles/variable.scss';
 // import { Link } from 'react-router-dom';
 
 class Main extends React.Component {
-  addElement = e => {
-    const input = document.getElementsByClassName('input')[0];
-    const box = document.createElement('div');
-
-    box.className = 'addedMessage';
-    const p = document.createElement('p');
-    const space = document.getElementsByClassName('feedMessage')[0];
-
-    if (e.key === 'Enter') {
-      p.innerHTML = input.value;
-
-      box.appendChild(p);
-      space.appendChild(box);
-      input.value = '';
-    }
+  constructor() {
+    super();
+    this.state = {
+      commentBox: [],
+      comment: '',
+    };
+  }
+  getInputValue = e => {
+    this.setState({
+      comment: e.target.value,
+    });
   };
 
-  clickEvent() {
-    const input = document.getElementsByClassName('input')[0];
-    const box = document.createElement('div');
-
-    box.className = 'addedMessage';
-    const p = document.createElement('p');
-    const space = document.getElementsByClassName('feedMessage')[0];
-    p.innerHTML = input.value;
-    box.appendChild(p);
-    space.appendChild(box);
-    input.value = '';
-  }
+  uploadComment = () => {
+    const { commentBox, comment } = this.state;
+    commentBox.push({ commentValue: comment });
+    this.setState({ comment: '' });
+  };
+  enterEvent = e => {
+    const { comment } = this.state;
+    if (e.key === 'Enter' && comment) {
+      this.uploadComment();
+      e.target.value = '';
+    }
+  };
 
   render() {
     return (
@@ -171,6 +167,11 @@ class Main extends React.Component {
                   />
                 </div>
               </div>
+              <div className="feedMessage">
+                {this.state.commentBox.map((comment, indx) => (
+                  <p key={indx}>{comment.commentValue}</p>
+                ))}
+              </div>
               <div className="commentTime">
                 <span>42분전</span>
               </div>
@@ -180,14 +181,13 @@ class Main extends React.Component {
                 className="input"
                 type="text"
                 placeholder="댓글 달기..."
-                onKeyPress={this.addElement}
+                value={this.comment}
+                onChange={this.getInputValue}
+                onKeyPress={this.enterEvent}
               />
-              <input
-                className="uploadButton"
-                type="button"
-                value="게시"
-                onClick={this.clickEvent}
-              />
+              <button className="uploadButton" onClick={this.uploadComment}>
+                게시
+              </button>
             </section>
           </section>
           <section className="main-right">

@@ -26,32 +26,12 @@ class Login extends React.Component {
     });
   };
 
-  // activeButton = () => {
-  //   const thisIsButton = document.querySelector('.button');
-  //   const thisIsId = document.querySelector('#id');
-  //   const thisIsPw = document.querySelector('#pw');
-  //   const inputId = thisIsId.value.includes('@') && thisIsId.value.length > 1;
-  //   const inputPw = thisIsPw.value.length >= 5;
-  //   const conditions = inputId && inputPw;
-
-  //   const activeBtn = () => {
-  //     thisIsButton.disabled = false;
-  //     thisIsButton.style.backgroundColor = '#0000ff';
-  //   };
-  //   const inActiveBtn = () => {
-  //     thisIsButton.disabled = true;
-  //     thisIsButton.style.backgroundColor = '#c4e1fb';
-  //   };
-
-  //   return conditions ? activeBtn() : inActiveBtn();
-  // };
-
   goToMain = () => {
     this.props.history.push('/main-seyeon');
   };
 
   render() {
-    console.log('this state', this.state);
+    const { inputIdValue, inputPwValue } = this.state;
     return (
       <div className="loginContainer">
         <main className="container">
@@ -73,13 +53,12 @@ class Login extends React.Component {
             value={this.inputPwValue}
           />
           <button
-            onClick={this.goToMain}
             className={
-              this.state.inputIdValue.indexOf('@') !== -1 &&
-              this.state.inputPwValue.length >= 5
+              inputIdValue.indexOf('@') !== -1 && inputPwValue.length >= 5
                 ? 'changeBtnColor'
                 : 'button'
             }
+            onClick={this.goToMain}
           >
             로그인
           </button>
