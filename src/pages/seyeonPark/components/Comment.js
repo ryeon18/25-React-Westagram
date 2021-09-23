@@ -2,11 +2,14 @@ import React from 'react';
 
 class Comment extends React.Component {
   render() {
+    const { commentBox } = this.props;
     return (
       <>
-        {this.props.commentBox.map((comment, indx) => (
-          <li key={indx}>{comment.commentValue}</li>
-        ))}
+        <ul>
+          {commentBox.map((comment, indx) => (
+            <li key={indx}>{comment.commentValue}</li>
+          ))}
+        </ul>
       </>
     );
   }

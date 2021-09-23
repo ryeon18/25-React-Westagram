@@ -3,6 +3,7 @@ import '../../../pages/seyeonPark/Login/Login.scss';
 import '../../../styles/common.scss';
 import '../../../styles/reset.scss';
 import '../../../styles/variable.scss';
+import LoginBox from '../components/LoginBox';
 // import { withRouter } from 'react-router-dom';
 
 class Login extends React.Component {
@@ -11,6 +12,7 @@ class Login extends React.Component {
     this.state = {
       inputIdValue: '',
       inputPwValue: '',
+      isButtonOn: false,
     };
   }
 
@@ -26,39 +28,32 @@ class Login extends React.Component {
     });
   };
 
+  changeButton = () => {
+    const { inputIdValue, inputPwValue } = this.state;
+    inputIdValue.indexOf('@') !== -1 && inputPwValue.length >= 5
+      ? this.setState({ isButtonOn: true })
+      : this.setState({ isButtonOn: false });
+  };
+
   goToMain = () => {
     this.props.history.push('/main-seyeon');
   };
 
   render() {
-    const { inputIdValue, inputPwValue } = this.state;
+    const { isButtonOn } = this.state;
     return (
       <div className="loginContainer">
         <main className="container">
           <h1>Westagram</h1>
-          <input
-            id="id"
-            className="logininput"
-            type="text"
-            placeholder="전화번호, 사용자 이름 또는 이메일"
-            onChange={this.handleIdInput}
-            value={this.inputIdValue}
-          />
-          <input
-            id="pw"
-            className="logininput"
-            type="password"
-            placeholder="비밀번호"
-            onChange={this.handlePwInput}
-            value={this.inputPwValue}
+          <LoginBox
+            getIdValue={this.handleIdInput}
+            getPwValue={this.handlePwInput}
+            changeBtn={this.changeButton}
           />
           <button
-            className={
-              inputIdValue.indexOf('@') !== -1 && inputPwValue.length >= 5
-                ? 'changeBtnColor'
-                : 'button'
-            }
+            className={isButtonOn ? 'changeBtnColor' : 'button'}
             onClick={this.goToMain}
+            disabled={isButtonOn ? false : true}
           >
             로그인
           </button>

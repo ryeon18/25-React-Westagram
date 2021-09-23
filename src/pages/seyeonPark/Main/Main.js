@@ -167,7 +167,7 @@ class Main extends React.Component {
                   />
                 </div>
               </div>
-              <div className="feedMessage">
+              <div className="thirdMessage">
                 <Comment commentBox={this.state.commentBox} />
               </div>
               <div className="commentTime">
@@ -179,7 +179,7 @@ class Main extends React.Component {
                 className="input"
                 type="text"
                 placeholder="댓글 달기..."
-                value={this.comment}
+                value={this.state.comment}
                 onChange={this.getInputValue}
                 onKeyPress={this.enterEvent}
               />
