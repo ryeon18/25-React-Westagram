@@ -53,9 +53,8 @@ class Comment extends React.Component {
 
   removeComment = deleteList => {
     const newArr = this.state.commentList.filter(
-      (item, index) => index !== deleteList.props.listId
+      item => item.id !== deleteList.props.id
     );
-
     this.setState({
       commentList: newArr,
     });
