@@ -16,18 +16,24 @@ class Comment extends React.Component {
                 ? 'comment_like fas fa-heart'
                 : 'comment_like far fa-heart'
             }
-            onClick={() => this.props.toggleLike(this.props.id)}
+            onClick={this.handleToggleLike}
           ></i>
           <i
             className="comment_delete far fa-trash-alt"
-            onClick={() => {
-              this.props.removeComment(this.props.id);
-            }}
+            onClick={this.handleRemoveComment}
           ></i>
         </div>
       </div>
     );
   }
+
+  handleToggleLike = () => {
+    this.props.toggleLike(this.props.id);
+  };
+
+  handleRemoveComment = () => {
+    this.props.removeComment(this.props.id);
+  };
 }
 
 export default Comment;
