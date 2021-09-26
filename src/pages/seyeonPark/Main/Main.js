@@ -24,11 +24,11 @@ class Main extends React.Component {
     commentBox.push({ commentValue: comment });
     this.setState({ comment: '' });
   };
+
   enterEvent = e => {
     const { comment } = this.state;
     if (e.key === 'Enter' && comment) {
       this.uploadComment();
-      e.target.value = '';
     }
   };
 

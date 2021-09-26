@@ -7,7 +7,10 @@ class Comment extends React.Component {
       <>
         <ul>
           {commentBox.map((comment, indx) => (
-            <li key={indx}>{comment.commentValue}</li>
+            <li key={indx}>
+              <span>남이 해준 맛있는 라면 </span>
+              {comment.commentValue}
+            </li>
           ))}
         </ul>
       </>

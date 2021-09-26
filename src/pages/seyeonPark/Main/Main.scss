@@ -80,6 +80,7 @@
   
   .feed {
     border: 1px solid #ebebeb;
+    width: 50%;
   }
   
   /*  피드 헤드 */
@@ -133,7 +134,7 @@
   /* 피드메인 이미지 */
   
   .feedMainimg {
-    width: 400px;
+    width: 100%;
     text-align: center;
   
     img {
@@ -221,9 +222,14 @@
       color: #80bcf5;
     }
   }
-  
-  .addedMessage p {
+
+  .thirdMessage {
+    width: 90%
+  }
+
+  .thirdMessage span {
     padding-bottom: 2px;
+    font-weight: bold;
   }
   
   /* --사이드-- */
@@ -289,7 +295,7 @@
     border: 1px solid #ebebeb;
     padding: 10px;
     width: 220px;
-    height: 180px;
+    height: 160px;
     font-size: 12px;
     overflow: hidden;
   }
