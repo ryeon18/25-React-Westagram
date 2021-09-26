@@ -9,10 +9,18 @@ class Main extends React.Component {
   constructor() {
     super();
     this.state = {
-      commentBox: [],
+      commentBox: [
+        {
+          id: 1,
+          userId: '민중의 지팡이 ',
+          content: '선생님, 집에 가셔야죠. 일어나세요',
+        },
+        { id: 2, userId: '먼지가되어서 ', content: '인간은 실수를 반복하지' },
+      ],
       comment: '',
     };
   }
+
   getInputValue = e => {
     this.setState({
       comment: e.target.value,
@@ -21,8 +29,15 @@ class Main extends React.Component {
 
   uploadComment = () => {
     const { commentBox, comment } = this.state;
-    commentBox.push({ commentValue: comment });
-    this.setState({ comment: '' });
+    const newCommentBox = [
+      ...commentBox,
+      {
+        id: commentBox.length + 1,
+        userId: '12시에 만나요 부라보콘 ',
+        content: comment,
+      },
+    ];
+    this.setState({ commentBox: newCommentBox, comment: '' });
   };
 
   enterEvent = e => {
