@@ -4,7 +4,47 @@ import '../../../styles/common.scss';
 import '../../../styles/reset.scss';
 
 class Main extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      comment: '',
+      commentList: [],
+    };
+  }
+
+  commentInput = e => {
+    this.setState({
+      comment: e.target.value,
+    });
+  };
+
+  commentPush = e => {
+    if (e.key === 'Enter' && this.state.comment) {
+      this.setState({
+        commentList: [
+          ...this.state.commentList,
+          { comment: this.state.comment },
+        ],
+      });
+      e.target.value = '';
+    }
+  };
+
+  commentSubmit = () => {
+    if (this.state.comment) {
+      this.setState({
+        commentList: [
+          ...this.state.commentList,
+          { comment: this.state.comment },
+        ],
+      });
+      //초기화 안됨
+      this.comment = '';
+    }
+  };
+
   render() {
+    console.log(this.state);
     return (
       <div className="mainBody">
         <header>
@@ -109,7 +149,27 @@ class Main extends React.Component {
                   />
                 </div>
               </div>
-              <div className="test">{/* {<!-- 댓글 -->} */}</div>
+              <ul className="test">
+                {/* {<!-- 댓글 -->} */}
+                {this.state.commentList.map((commentArray, index) => {
+                  return (
+                    <div key={index}>
+                      <div className="commendId">
+                        i_ddgg
+                        <span className="commend">{commentArray.comment}</span>
+                      </div>
+                      <div className="binheartBox">
+                        <img
+                          alt="binheart"
+                          class="binheart"
+                          src="/images/suminKim/heart.png"
+                          onclick="binheart()"
+                        />
+                      </div>
+                    </div>
+                  );
+                })}
+              </ul>
 
               <div className="contentTime">방금</div>
             </div>
@@ -119,11 +179,13 @@ class Main extends React.Component {
                 className="chat chat2"
                 type="text"
                 placeholder="댓글달기..."
+                onChange={this.commentInput}
+                onKeyPress={this.commentPush}
               ></input>
               <button
                 className="pushBotton"
                 type="submit"
-                onclick="commentSubmit()"
+                onClick={this.commentSubmit}
               >
                 <b>게시</b>
               </button>
