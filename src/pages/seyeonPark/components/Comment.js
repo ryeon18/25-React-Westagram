@@ -2,7 +2,6 @@ import React from 'react';
 
 class Comment extends React.Component {
   render() {
-    console.log('thisprops', this.props);
     const { commentBox } = this.props;
     return (
       <>
