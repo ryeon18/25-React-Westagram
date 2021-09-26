@@ -23,7 +23,7 @@ class Login extends React.Component {
 
   handleButton = () => {
     const { idValue, pwValue } = this.state;
-    idValue.includes('@') && pwValue.length > 5
+    idValue.indexOf('@') && pwValue.length > 5
       ? this.setState({ isButtonOn: true })
       : this.setState({ isButtonOn: false });
   };
@@ -42,6 +42,7 @@ class Login extends React.Component {
   };
 
   render() {
+    const { isButtonOn } = this.state;
     return (
       <>
         <main className="Login">
@@ -69,7 +70,7 @@ class Login extends React.Component {
               <div className="loginBtn">
                 <button
                   onClick={this.goToMain}
-                  className={this.state.isButtonOn ? 'buttonOn' : 'buttonOff'}
+                  className={isButtonOn ? 'buttonOn' : 'buttonOff'}
                 >
                   로그인
                 </button>
