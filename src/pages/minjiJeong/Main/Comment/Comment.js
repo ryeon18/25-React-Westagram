@@ -28,6 +28,7 @@ class Comment extends React.Component {
     if (e.code === 'Enter') {
       return;
     }
+
     this.setState({
       content: e.target.value,
     });
@@ -40,6 +41,7 @@ class Comment extends React.Component {
       content: this.state.content,
       isLiked: false,
     });
+
     this.setState({ content: '' });
     id++;
   };
@@ -51,12 +53,19 @@ class Comment extends React.Component {
     }
   };
 
-  removeComment = deleteList => {
-    const newArr = this.state.commentList.filter(
-      item => item.id !== deleteList.props.id
-    );
+  removeComment = id => {
+    const newArr = this.state.commentList.filter(item => item.id !== id);
+
     this.setState({
       commentList: newArr,
+    });
+  };
+
+  toggleLike = id => {
+    this.setState({
+      commentList: this.state.commentList.map(el =>
+        el.id === id ? { ...el, isLiked: !el.isLiked } : el
+      ),
     });
   };
 

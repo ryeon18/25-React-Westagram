@@ -16,12 +16,12 @@ class Comment extends React.Component {
                 ? 'comment_like fas fa-heart'
                 : 'comment_like far fa-heart'
             }
-            onClick={() => this.props.toggleLike(this)}
+            onClick={() => this.props.toggleLike(this.props.id)}
           ></i>
           <i
             className="comment_delete far fa-trash-alt"
             onClick={() => {
-              this.props.removeComment(this);
+              this.props.removeComment(this.props.id);
             }}
           ></i>
         </div>
