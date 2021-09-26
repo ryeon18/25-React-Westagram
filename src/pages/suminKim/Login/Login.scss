@@ -1,75 +1,78 @@
 $theme-color: white;
 
 @mixin flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 body {
-    @include flex-center;
-    background-color: #fafafa;
-    height: 100%;
+  @include flex-center;
+  background-color: #fafafa;
+  height: 100%;
 }
 
 .bigBox {
-    width: 400px;
-    height: 550px;
-    border: 1px solid lightgray;
-    background-color: $theme-color;
+  width: 400px;
+  height: 550px;
+  border: 1px solid lightgray;
+  background-color: $theme-color;
 }
 
 .logo {
-    margin-top: 40px;
-    font-size: 50px;
-    font-family: 'Lobster', cursive;
-    background-color: $theme-color;
+  margin-top: 40px;
+  font-size: 50px;
+  font-family: 'Lobster', cursive;
+  background-color: $theme-color;
 }
 
 input {
-    width: 80%;
-    height: 50px;
-    border: 1px solid lightgray;
-    background-color: #fafafa;
-    border-radius: 3px;
-    padding-left: 10px;
+  width: 80%;
+  height: 50px;
+  border: 1px solid lightgray;
+  background-color: #fafafa;
+  border-radius: 3px;
+  padding-left: 10px;
 }
 
 .inputId {
-    margin-top: 50px;
-    background-color: $theme-color;
+  margin-top: 50px;
+  background-color: $theme-color;
 }
 
 .inputPw {
-    margin-top: 10px;
-    background-color: $theme-color;
+  margin-top: 10px;
+  background-color: $theme-color;
 }
 
 .loginButton {
-    margin-top: 20px;
-    background-color: $theme-color;
+  margin-top: 20px;
+  background-color: $theme-color;
 }
 
-.login_Button {
-    width: 80%;
-    height: 40px;
-    background-color: #0095f6;
-    opacity: .5;
-    border: 0;
-    color: $theme-color;
-    margin-bottom: 170px;
-    border-radius: 6px;
-    cursor: grab;
+.buttonOn,
+.buttonOff {
+  width: 80%;
+  height: 40px;
+  background-color: #0095f6;
+  border: 0;
+  color: $theme-color;
+  margin-bottom: 170px;
+  border-radius: 6px;
+  cursor: grab;
+}
+.buttonOff {
+  opacity: 0.5;
 }
 
-.btn-authorized {
-    opacity: 1;
+.buttonOn {
+  opacity: 1;
 }
 
 a {
-    font-size: 12px;
-    text-decoration: none;
-    background-color: $theme-color;
-    color: rgb(35, 52, 77);
+  font-size: 12px;
+  text-decoration: none;
+  background-color: $theme-color;
+  color: rgb(35, 52, 77);
 }

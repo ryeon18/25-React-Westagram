@@ -2,7 +2,6 @@ import React from 'react';
 import './Login.scss';
 import '../../../styles/common.scss';
 import '../../../styles/reset.scss';
-import { withRouter } from 'react-router-dom';
 
 //     // <!-- 글꼴 -->
 //     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,30 +12,47 @@ class Login extends React.Component {
   goToMain = () => {
     this.props.history.push('/Main');
   };
+
   constructor() {
     super();
     this.state = {
-      inputValue: { idValue: '', pwValue: '' },
+      idValue: '',
+      pwValue: '',
+      buttonOn: false,
     };
   }
   handleIdInput = e => {
     this.setState({
-      inputValue: { ...this.state.inputValue, idValu: e.target.value },
+      idValue: e.target.value,
     });
   };
   handlePwInput = e => {
     this.setState({
-      inputValue: { ...this.state.inputValue, pwValu: e.target.value },
+      pwValue: e.target.value,
+    });
+  };
+  buttonChange = () => {
+    const { idValue } = this.state;
+    const { pwValue } = this.state;
+
+    this.setState({
+      buttonOn:
+        idValue.indexOf('@') !== -1 &&
+        idValue.length >= 5 &&
+        pwValue.length >= 5,
     });
   };
 
   render() {
+    const { buttonOn } = this.state;
+    console.log(this.state);
     return (
       <div className="bigBox">
         <div className="logo">westagram</div>
         <div className="inputId">
           <input
             onChange={this.handleIdInput}
+            onKeyUp={this.buttonChange}
             className="input_id"
             type="text"
             placeholder="전화번호, 사용자 이름 또는 이메일"
@@ -48,10 +64,14 @@ class Login extends React.Component {
             type="password"
             placeholder="비밀번호"
             onChange={this.handlePwInput}
+            onKeyUp={this.buttonChange}
           />
         </div>
         <div className="loginButton">
-          <button onClick={this.goToMain} className="login_Button">
+          <button
+            onClick={this.goToMain}
+            className={buttonOn ? 'buttonOn' : 'buttonOff'}
+          >
             로그인
           </button>
         </div>
@@ -60,4 +80,4 @@ class Login extends React.Component {
     );
   }
 }
-export default withRouter(Login);
+export default Login;
