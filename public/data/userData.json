@@ -1,42 +1,42 @@
 [
   {
-    "id": "1",
+    "id": 1,
     "userId": "up_enery_bar",
     "description": "난 에너지바",
     "image": "images/minjiJeong/energy.jpg"
   },
   {
-    "id": "2",
+    "id": 2,
     "userId": "deli_cious.pizza",
     "description": "맛있는 야채 피자",
     "image": "images/minjiJeong/pizza.jpg"
   },
   {
-    "id": "3",
+    "id": 3,
     "userId": "im.tendong_",
     "description": "JMT 텐동",
     "image": "images/minjiJeong/tendong.jpg"
   },
   {
-    "id": "4",
+    "id": 4,
     "userId": "im.yellow_peaaach",
     "description": "노랑 복숭아 탄산",
     "image": "images/minjiJeong/juice.jpg"
   },
   {
-    "id": "5",
+    "id": 5,
     "userId": "gunchim_loopy",
     "description": "군침이 싹도노",
     "image": "images/minjiJeong/cake.jpg"
   },
   {
-    "id": "6",
+    "id": 6,
     "userId": "__bingsuya",
     "description": "틈헤이러 빙수",
     "image": "images/minjiJeong/bingsu.jpg"
   },
   {
-    "id": "7",
+    "id": 7,
     "userId": "cheers_beers_",
     "description": "치어스비어스 홍대 1호점",
     "image": "images/minjiJeong/beer.jpg"

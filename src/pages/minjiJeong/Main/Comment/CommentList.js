@@ -2,19 +2,6 @@ import React from 'react';
 import './CommentList.scss';
 
 class Comment extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      isLiked: false,
-    };
-  }
-
-  toggleLike = () => {
-    this.setState({
-      isLiked: !this.state.isLiked,
-    });
-  };
-
   render() {
     return (
       <div className="comments_row">
@@ -25,11 +12,11 @@ class Comment extends React.Component {
         <div className="comments_menu">
           <i
             className={
-              this.state.isLiked
+              this.props.isLiked
                 ? 'comment_like fas fa-heart'
                 : 'comment_like far fa-heart'
             }
-            onClick={this.toggleLike}
+            onClick={() => this.props.toggleLike(this)}
           ></i>
           <i
             className="comment_delete far fa-trash-alt"

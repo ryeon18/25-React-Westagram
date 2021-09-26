@@ -2,17 +2,32 @@ import React from 'react';
 import CommentList from './CommentList';
 import './Comment.scss';
 
+let id = 4;
+
 class Comment extends React.Component {
   constructor() {
     super();
     this.state = {
-      userId: '_minji.jeong',
       commentList: [],
       content: '',
+      isLiked: false,
     };
   }
 
+  componentDidMount() {
+    fetch('http://localhost:3000/data/commentData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        this.setState({ commentList: data });
+      });
+  }
+
   getComment = e => {
+    if (e.code === 'Enter') {
+      return;
+    }
     this.setState({
       content: e.target.value,
     });
@@ -20,13 +35,18 @@ class Comment extends React.Component {
 
   uploadComment = e => {
     this.state.commentList.push({
-      text: this.state.content,
+      id: id,
+      userId: '_minji.jeong',
+      content: this.state.content,
+      isLiked: false,
     });
     this.setState({ content: '' });
+    id++;
   };
 
   handleEnter = e => {
     if (e.code === 'Enter') {
+      e.preventDefault();
       this.uploadComment();
     }
   };
@@ -45,14 +65,16 @@ class Comment extends React.Component {
     return (
       <>
         <div className="article_comments">
-          {/* 추가된 댓글 위치 */}
-          {this.state.commentList.map((el, index) => {
+          {/* 추가될 댓글 위치 */}
+          {this.state.commentList.map(el => {
             return (
               <CommentList
-                key={index}
-                listId={index}
-                userId={this.state.userId}
-                content={el.text}
+                key={el.id}
+                id={el.id}
+                userId={el.userId}
+                content={el.content}
+                isLiked={el.isLiked}
+                toggleLike={this.toggleLike}
                 removeComment={this.removeComment}
               />
             );

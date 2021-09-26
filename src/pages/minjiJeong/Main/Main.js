@@ -129,7 +129,7 @@ class Main extends React.Component {
                 src="images/minjiJeong/me.jpg"
               />
               <div>
-                <h5 className="my_id user_id">{this.state.userId}</h5>
+                <h5 className="my_id user_id">_minji.jeong</h5>
                 <h5 className="user_description">정민지</h5>
               </div>
             </div>

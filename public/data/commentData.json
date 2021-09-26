@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "userId": "fairy_yoon",
+    "content": "맛집 정보좀 공유해주세요~ 🙋‍♀️",
+    "isLiked": true
+  },
+  {
+    "id": 2,
+    "userId": "p_acid",
+    "content": "와 사진 잘찍으셨네요!!!",
+    "isLiked": false
+  },
+  {
+    "id": 3,
+    "userId": "yang_chris",
+    "content": "거북이 하이",
+    "isLiked": true
+  }
+]

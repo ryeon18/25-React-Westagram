@@ -49,10 +49,10 @@ class SearchUser extends React.Component {
         >
           <div className="search_result_arrow"></div>
           <ul>
-            {this.state.filteredList.map((el, index) => {
+            {this.state.filteredList.map(el => {
               return (
                 <FilteredUser
-                  key={index}
+                  key={el.id}
                   image={el.image}
                   userId={el.userId}
                   description={el.description}
