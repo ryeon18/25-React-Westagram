@@ -185,13 +185,16 @@
     color: #a7a7a7;
   }
   
-  .firstmessage {
-    padding-bottom: 5px;
+  .firstMessage {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   
   .secondMessage {
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
   
   /* 댓글창 */
@@ -225,7 +228,15 @@
   }
 
   .thirdMessage {
-    width: 90%;
+    width: 398px;
+    display: flex;
+  }
+
+  .thirdMessage li {
+    width: 398px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .thirdMessage span {
@@ -237,9 +248,7 @@
   .main-right {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     margin-left: 30px;
-    width: 250px;
   }
   
   /* 사이드 다른유저 */

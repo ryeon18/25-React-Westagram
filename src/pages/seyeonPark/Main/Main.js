@@ -3,23 +3,36 @@ import '../../../pages/seyeonPark/Main/Main.scss';
 import '../../../styles/common.scss';
 import '../../../styles/reset.scss';
 import '../../../styles/variable.scss';
-// import { Link } from 'react-router-dom';
 import Comment from '../components/Comment';
+import Nav from '../components/Nav';
+import Footer from '../components/Footer';
+import AsideStory from '../components/AsideStory';
+import AsideRecommend from '../components/AsideRecommend';
+
 class Main extends React.Component {
   constructor() {
     super();
     this.state = {
-      commentBox: [
-        {
-          id: 1,
-          userId: '민중의 지팡이 ',
-          content: '선생님, 집에 가셔야죠. 일어나세요',
-        },
-        { id: 2, userId: '먼지가되어서 ', content: '인간은 실수를 반복하지' },
-      ],
+      commentBox: [],
       comment: '',
+      isHeartChange: false,
     };
   }
+
+  componentDidMount() {
+    fetch('http://localhost:3000/data/commentData.json', { method: 'GET' })
+      .then(res => res.json())
+      .then(data => {
+        this.setState({ commentBox: data });
+      });
+  }
+
+  changeHeartColor = () => {
+    const { isHeartChange } = this.state;
+    this.setState({
+      isHeartChange: !isHeartChange,
+    });
+  };
 
   getInputValue = e => {
     this.setState({
@@ -29,6 +42,7 @@ class Main extends React.Component {
 
   uploadComment = () => {
     const { commentBox, comment } = this.state;
+    if (comment.length === 0) return;
     const newCommentBox = [
       ...commentBox,
       {
@@ -48,40 +62,10 @@ class Main extends React.Component {
   };
 
   render() {
+    const { commentBox, comment, isHeartChange } = this.state;
     return (
       <div className="mainContainer">
-        <nav className="mainHearder">
-          <div className="mainLogoContainer">
-            <div className="logo">
-              <a className="logoimg" href="/login-seyeon">
-                <img
-                  alt="instagramLogo"
-                  src="../../images/seyeonPark/instagram.png"
-                />
-              </a>
-            </div>
-            <a className="h1" href="/">
-              Westagram
-            </a>
-          </div>
-          <div className="search">
-            <input type="search" placeholder="검색" />
-            <img
-              id="searchimg"
-              src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png"
-              alt="searchimage"
-            />
-          </div>
-          <div className="manuIcons">
-            <img alt="explore" src="../../images/seyeonPark/explore.png" />
-            <a href="/">
-              <img alt="like" src="../../images/seyeonPark/heart.png" />
-            </a>
-            <a href="/">
-              <img alt="profile" src="../../images/seyeonPark/profile.png" />
-            </a>
-          </div>
-        </nav>
+        <Nav />
         <main>
           <section className="feed">
             <header className="feedHeader">
@@ -145,7 +129,7 @@ class Main extends React.Component {
               <div className="likeCheck">
                 <p>
                   <a className="message" href="/">
-                    nature
+                    <span>nature </span>
                   </a>
                   님
                   <a className="message" href="/">
@@ -158,32 +142,49 @@ class Main extends React.Component {
                 <div className="firstMessage">
                   <span>
                     <a className="message" href="/">
-                      myroom
+                      <span>myroom </span>
                     </a>
                     진정한 힐링은 집에서..
-                  </span>
-                  <span>
                     <a className="moreComment" href="/">
                       더보기
                     </a>
                   </span>
+                  <button onClick={this.changeHeartColor}>
+                    <img
+                      alt="checkingHeart"
+                      src="../../images/seyeonPark/heart.png"
+                      width="12px"
+                      style={{
+                        color: isHeartChange ? 'red' : 'black',
+                      }}
+                    />
+                  </button>
                 </div>
                 <div className="secondMessage">
                   <span>
                     <a className="message" href="/">
-                      hahaha
+                      <span>노래좋아 </span>
                     </a>
                     #자연인
                   </span>
-                  <img
-                    alt="checkingHeart"
-                    src="../../images/seyeonPark/heart.png"
-                    width="12px"
-                  />
+                  <button onClick={this.changeHeartColor}>
+                    <img
+                      alt="checkingHeart"
+                      src="../../images/seyeonPark/heart.png"
+                      width="12px"
+                      style={{
+                        color: isHeartChange ? 'red' : 'black',
+                      }}
+                    />
+                  </button>
                 </div>
               </div>
               <div className="thirdMessage">
-                <Comment commentBox={this.state.commentBox} />
+                <Comment
+                  commentBox={commentBox}
+                  onClick={this.changeHeartColor}
+                  style={{ color: isHeartChange }}
+                />
               </div>
               <div className="commentTime">
                 <span>42분전</span>
@@ -194,7 +195,7 @@ class Main extends React.Component {
                 className="input"
                 type="text"
                 placeholder="댓글 달기..."
-                value={this.state.comment}
+                value={comment}
                 onChange={this.getInputValue}
                 onKeyPress={this.enterEvent}
               />
@@ -217,174 +218,9 @@ class Main extends React.Component {
                 <span className="userInfo">WeCode | 위코드</span>
               </div>
             </article>
-            <article className="otherStory">
-              <section className="otherStoryHead">
-                <span>스토리</span>
-                <span id="storyAll">모두 보기</span>
-              </section>
-              <section className="otherStoryList">
-                <section className="storyuser">
-                  <img
-                    className="sideprofileimge2"
-                    alt="otherUserImg"
-                    src="../../images/seyeonPark/profile2.jpeg"
-                  />
-                  <div className="userInfo">
-                    <p>
-                      <a className="sideId" href="/">
-                        NotGood
-                      </a>
-                    </p>
-                    <span>26분 전</span>
-                  </div>
-                </section>
-                <section className="storyuser">
-                  <img
-                    className="sideprofileimge2"
-                    alt="otherUserImg"
-                    src="../../images/seyeonPark/profile3.jpeg"
-                  />
-                  <div className="userInfo">
-                    <p>
-                      <a className="sideId" href="/">
-                        hothothot
-                      </a>
-                    </p>
-                    <span>15초 전</span>
-                  </div>
-                </section>
-                <section className="storyuser">
-                  <img
-                    className="sideprofileimge2"
-                    alt="otherUserImg"
-                    src="../../images/seyeonPark/profile4.jpeg"
-                  />
-                  <div className="userInfo">
-                    <p>
-                      <a className="sideId" href="/">
-                        개그맨신동엽
-                      </a>
-                    </p>
-                    <span>2시간 전</span>
-                  </div>
-                </section>
-                <section className="storyuser">
-                  <img
-                    className="sideprofileimge2"
-                    alt="otherUserImg"
-                    src="../../images/seyeonPark/profile4.jpeg"
-                  />
-                  <div className="userInfo">
-                    <p>
-                      <a className="sideId" href="/">
-                        같은이미지다
-                      </a>
-                    </p>
-                    <span>1분 전</span>
-                  </div>
-                </section>
-              </section>
-            </article>
-            <article className="recommend">
-              <section className="sideRecommend">
-                <span>회원님을 위한 추천</span>
-                <span className="showAll">모두 보기</span>
-              </section>
-              <section className="sideRecommendList">
-                <section className="recommendUser">
-                  <img
-                    className="sideprofileimge2"
-                    alt="sideprofileimg"
-                    src="../../images/seyeonPark/profile2.jpeg"
-                  />
-                  <div className="userInfo2">
-                    <p>
-                      <a className="sideId" href="/">
-                        sleepy
-                      </a>
-                    </p>
-                    <span>언제자니님 외 3명이 좋아합니다</span>
-                  </div>
-                  <div className="followButton">
-                    <a href="/">팔로우</a>
-                  </div>
-                </section>
-                <section className="recommendUser">
-                  <img
-                    className="sideprofileimge2"
-                    alt="sideprofileimg"
-                    src="../../images/seyeonPark/profile3.jpeg"
-                  />
-                  <div className="userInfo2">
-                    <p>
-                      <a className="sideId" href="/">
-                        hothothot
-                      </a>
-                    </p>
-                    <span>여름은더워님 외 2명이 좋아합니다</span>
-                  </div>
-                  <div className="followButton">
-                    <a href="/">팔로우</a>
-                  </div>
-                </section>
-                <section className="recommendUser">
-                  <img
-                    className="sideprofileimge2"
-                    alt="sideprofileimg"
-                    src="../../images/seyeonPark/profile4.jpeg"
-                  />
-                  <div className="userInfo2">
-                    <p>
-                      <a className="sideId" href="/">
-                        개그맨신동엽
-                      </a>
-                    </p>
-                    <span>개그동아리회장님 외 22명이 좋아합니다</span>
-                  </div>
-                  <div className="followButton">
-                    <a href="/">팔로우</a>
-                  </div>
-                </section>
-              </section>
-            </article>
-            <article className="footer">
-              <ul className="footerlist">
-                <li>
-                  <a href="/">Instaram 정보</a>
-                </li>
-                <li>
-                  <a href="/">지원</a>
-                </li>
-                <li>
-                  <a href="/">홍보 센터</a>
-                </li>
-                <li>
-                  <a href="/">API</a>
-                </li>
-                <li>
-                  <a href="/">채용 정보</a>
-                </li>
-                <li>
-                  <a href="/">개인정보처리방침</a>
-                </li>
-                <li>
-                  <a href="/">약관</a>
-                </li>
-                <li>
-                  <a href="/">디렉터리</a>
-                </li>
-                <li>
-                  <a href="/">프로필</a>
-                </li>
-                <li>
-                  <a href="/">해시태그</a>
-                </li>
-                <li>
-                  <a href="/">언어</a>
-                </li>
-              </ul>
-              <p>© 2019 INSTAGRAM</p>
-            </article>
+            <AsideStory />
+            <AsideRecommend />
+            <Footer />
           </section>
         </main>
       </div>

@@ -4,7 +4,6 @@ import '../../../styles/common.scss';
 import '../../../styles/reset.scss';
 import '../../../styles/variable.scss';
 import LoginBox from '../components/LoginBox';
-// import { withRouter } from 'react-router-dom';
 
 class Login extends React.Component {
   constructor() {
