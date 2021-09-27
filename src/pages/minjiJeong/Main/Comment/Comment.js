@@ -15,20 +15,10 @@ class Comment extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/data/commentData.json', {
-      method: 'GET',
-    })
-      .then(res => res.json())
-      .then(data => {
-        this.setState({ commentList: data });
-      });
+    this.setState({ commentList: this.props.commentList });
   }
 
   getComment = e => {
-    if (e.code === 'Enter') {
-      return;
-    }
-
     this.setState({
       content: e.target.value,
     });

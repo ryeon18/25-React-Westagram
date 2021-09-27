@@ -1,5 +1,5 @@
 import React from 'react';
-import Comment from './Comment/Comment';
+import Feed from './Feed/Feed';
 import SearchUser from './SearchUser/SearchUser';
 import ProgramInfo from './ProgramInfo/ProgramInfo';
 import INFO_LIST from './ProgramInfo/programInfoData';
@@ -12,7 +12,20 @@ class Main extends React.Component {
     super();
     this.state = {
       isVisible: false,
+      feedList: [],
     };
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:3000/data/feedData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          feedList: data,
+        });
+      });
   }
 
   render() {
@@ -77,192 +90,168 @@ class Main extends React.Component {
         </nav>
         <div className="main_container">
           <div className="articles_area">
-            {/* 피드 */}
-            <div className="article">
-              <div className="article_header">
-                <div className="header_user">
-                  <img
-                    className="profile_s"
-                    alt="user_profile"
-                    src="images/minjiJeong/me.jpg"
-                  />
-                  <span className="user_name">_minji.jeong</span>
-                </div>
-                <i className="fas fa-ellipsis-h"></i>
-              </div>
-              <div className="article_media">
-                <img alt="pasta" src="images/minjiJeong/pasta.jpg" />
-              </div>
-              <div className="article_menu">
-                <div className="menu_column">
-                  <i className="far fa-heart"></i>
-                  <i className="far fa-comment"></i>
-                  <i className="far fa-share-square"></i>
-                </div>
-                <i className="far fa-bookmark"></i>
-              </div>
-              <div className="article_subscript">
-                <img
-                  className="profile_sm"
-                  alt="mountain"
-                  src="images/minjiJeong/mount.jpg"
+            {this.state.feedList.map(el => {
+              return (
+                <Feed
+                  key={el.id}
+                  userId={el.userId}
+                  userImage={el.userImage}
+                  feedImage={el.feedImage}
+                  likedAccount={el.likedAccount}
+                  like={el.like}
+                  content={el.content}
+                  comments={el.comments}
                 />
-                <h5>
-                  <span className="user_id">kyeong_hoooonie</span>님&nbsp;
-                  <span className="like_count">외 10명</span>이 좋아합니다
-                </h5>
-              </div>
-              <div className="article_text">
-                <span className="user_id">_minji.jeong</span>내돈내산 파스타
-                JMT~
-                <span className="show_more">더 보기</span>
-              </div>
-              <Comment />
-            </div>
+              );
+            })}
           </div>
-          <div className="side_area">
-            {/* 스토리 */}
-            <div className="show_account">
-              <img
-                className="profile_m"
-                alt="user_profile"
-                src="images/minjiJeong/me.jpg"
-              />
-              <div>
-                <h5 className="my_id user_id">_minji.jeong</h5>
-                <h5 className="user_description">정민지</h5>
-              </div>
-            </div>
-            <div className="new_stories">
-              <div className="stories_header">
-                <h5>스토리</h5>
-                <a className="show_all" href="/">
-                  모두 보기
-                </a>
-              </div>
-              <div className="stories_row">
-                <div className="show_account">
-                  <img
-                    className="profile_s"
-                    alt="cat"
-                    src="images/minjiJeong/chris.jpg"
-                  />
-                  <div>
-                    <h5 className="user_id">yang_chris</h5>
-                    <h5 className="time_ago">10분 전</h5>
-                  </div>
-                </div>
-                <div className="show_account">
-                  <img
-                    className="profile_s"
-                    alt="dog"
-                    src="images/minjiJeong/acid.png"
-                  />
-                  <div>
-                    <h5 className="user_id">acid_rain</h5>
-                    <h5 className="time_ago">16분 전</h5>
-                  </div>
-                </div>
-                <div className="show_account">
-                  <img
-                    className="profile_s"
-                    alt="sunrise"
-                    src="images/minjiJeong/sun.jpg"
-                  />
-                  <div>
-                    <h5 className="user_id">before_sunrise</h5>
-                    <h5 className="time_ago">33분 전</h5>
-                  </div>
-                </div>
-                <div className="show_account">
-                  <img
-                    className="profile_s"
-                    alt="blue_lazer"
-                    src="images/minjiJeong/lazer.png"
-                  />
-                  <div>
-                    <h5 className="user_id">kyeong_hoooonie</h5>
-                    <h5 className="time_ago">1시간 전</h5>
-                  </div>
-                </div>
-                <div className="show_account">
-                  <img
-                    className="profile_s"
-                    alt="fairy"
-                    src="images/minjiJeong/fairy.jpg"
-                  />
-                  <div>
-                    <h5 className="user_id">fairy_yooon</h5>
-                    <h5 className="time_ago">5시간 전</h5>
-                  </div>
+          <div class="side_wrapper">
+            <div className="side_area">
+              {/* 스토리 */}
+              <div className="show_account">
+                <img
+                  className="profile_m"
+                  alt="user_profile"
+                  src="images/minjiJeong/me.jpg"
+                />
+                <div>
+                  <h5 className="my_id user_id">_minji.jeong</h5>
+                  <h5 className="user_description">정민지</h5>
                 </div>
               </div>
-            </div>
-            {/* 친구 추천 */}
-            <div className="recommend_friends">
-              <div className="recommend_header">
-                <h5>회원님을 위한 추천</h5>
-                <a className="show_all" href="/">
-                  모두 보기
-                </a>
-              </div>
-              <div className="recommend_contents">
-                <div className="recommend_row">
-                  <img
-                    className="profile_s"
-                    alt="conference"
-                    src="images/minjiJeong/blue.jpg"
-                  />
-                  <div>
-                    <h5 className="user_id">haedal</h5>
-                    <h5 className="friends_info">
-                      jimmie님 외 2명이 친구입니다.
-                    </h5>
-                  </div>
-                  <a className="btn_follow" href="/">
-                    팔로우
+              <div className="new_stories">
+                <div className="stories_header">
+                  <h5>스토리</h5>
+                  <a className="show_all" href="/">
+                    모두 보기
                   </a>
                 </div>
-                <div className="recommend_row">
-                  <img
-                    className="profile_s"
-                    alt="ocean"
-                    src="images/minjiJeong/ocean.jpg"
-                  />
-                  <div>
-                    <h5 className="user_id">sooooya</h5>
-                    <h5 className="friends_info">chris_yang님과 친구입니다.</h5>
+                <div className="stories_row">
+                  <div className="show_account">
+                    <img
+                      className="profile_s"
+                      alt="cat"
+                      src="images/minjiJeong/chris.jpg"
+                    />
+                    <div>
+                      <h5 className="user_id">yang_chris</h5>
+                      <h5 className="time_ago">10분 전</h5>
+                    </div>
                   </div>
-                  <a className="btn_follow" href="/">
-                    팔로우
-                  </a>
-                </div>
-                <div className="recommend_row">
-                  <img
-                    className="profile_s"
-                    alt="white_puppy"
-                    src="images/minjiJeong/puppy.png"
-                  />
-                  <div>
-                    <h5 className="user_id">star_coffee</h5>
-                    <h5 className="friends_info">
-                      before_sunrise님 외 1명이 친구입니다.
-                    </h5>
+                  <div className="show_account">
+                    <img
+                      className="profile_s"
+                      alt="dog"
+                      src="images/minjiJeong/acid.png"
+                    />
+                    <div>
+                      <h5 className="user_id">acid_rain</h5>
+                      <h5 className="time_ago">16분 전</h5>
+                    </div>
                   </div>
-                  <a className="btn_follow" href="/">
-                    팔로우
-                  </a>
+                  <div className="show_account">
+                    <img
+                      className="profile_s"
+                      alt="sunrise"
+                      src="images/minjiJeong/sun.jpg"
+                    />
+                    <div>
+                      <h5 className="user_id">before_sunrise</h5>
+                      <h5 className="time_ago">33분 전</h5>
+                    </div>
+                  </div>
+                  <div className="show_account">
+                    <img
+                      className="profile_s"
+                      alt="blue_lazer"
+                      src="images/minjiJeong/lazer.png"
+                    />
+                    <div>
+                      <h5 className="user_id">kyeong_hoooonie</h5>
+                      <h5 className="time_ago">1시간 전</h5>
+                    </div>
+                  </div>
+                  <div className="show_account">
+                    <img
+                      className="profile_s"
+                      alt="fairy"
+                      src="images/minjiJeong/fairy.jpg"
+                    />
+                    <div>
+                      <h5 className="user_id">fairy_yooon</h5>
+                      <h5 className="time_ago">5시간 전</h5>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-            {/* 프로그램 정보 */}
-            <div className="program_info">
-              <ul>
-                {INFO_LIST.map((el, index) => {
-                  return <ProgramInfo key={index} content={el.content} />;
-                })}
-              </ul>
-              <span>&#169; 2019 INSTAGRAM</span>
+              {/* 친구 추천 */}
+              <div className="recommend_friends">
+                <div className="recommend_header">
+                  <h5>회원님을 위한 추천</h5>
+                  <a className="show_all" href="/">
+                    모두 보기
+                  </a>
+                </div>
+                <div className="recommend_contents">
+                  <div className="recommend_row">
+                    <img
+                      className="profile_s"
+                      alt="conference"
+                      src="images/minjiJeong/blue.jpg"
+                    />
+                    <div>
+                      <h5 className="user_id">haedal</h5>
+                      <h5 className="friends_info">
+                        jimmie님 외 2명이 친구입니다.
+                      </h5>
+                    </div>
+                    <a className="btn_follow" href="/">
+                      팔로우
+                    </a>
+                  </div>
+                  <div className="recommend_row">
+                    <img
+                      className="profile_s"
+                      alt="ocean"
+                      src="images/minjiJeong/ocean.jpg"
+                    />
+                    <div>
+                      <h5 className="user_id">sooooya</h5>
+                      <h5 className="friends_info">
+                        chris_yang님과 친구입니다.
+                      </h5>
+                    </div>
+                    <a className="btn_follow" href="/">
+                      팔로우
+                    </a>
+                  </div>
+                  <div className="recommend_row">
+                    <img
+                      className="profile_s"
+                      alt="white_puppy"
+                      src="images/minjiJeong/puppy.png"
+                    />
+                    <div>
+                      <h5 className="user_id">star_coffee</h5>
+                      <h5 className="friends_info">
+                        before_sunrise님 외 1명이 친구입니다.
+                      </h5>
+                    </div>
+                    <a className="btn_follow" href="/">
+                      팔로우
+                    </a>
+                  </div>
+                </div>
+              </div>
+              {/* 프로그램 정보 */}
+              <div className="program_info">
+                <ul>
+                  {INFO_LIST.map((el, index) => {
+                    return <ProgramInfo key={index} content={el.content} />;
+                  })}
+                </ul>
+                <span>&#169; 2019 INSTAGRAM</span>
+              </div>
             </div>
           </div>
         </div>
