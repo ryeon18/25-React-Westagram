@@ -1,12 +1,20 @@
 import React from 'react';
 import './ProgramInfo.scss';
+import INFO_LIST from './programInfoData';
 
 class ProgramInfo extends React.Component {
   render() {
     return (
-      <li className="program_info_list">
-        <a href="/">{this.props.content}</a>
-      </li>
+      <div className="program_info">
+        <ul>
+          {INFO_LIST.map(el => (
+            <li className="program_info_list">
+              <a href="/">{el.content}</a>
+            </li>
+          ))}
+        </ul>
+        <span>&#169; 2019 INSTAGRAM</span>
+      </div>
     );
   }
 }

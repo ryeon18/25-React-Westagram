@@ -1,0 +1,42 @@
+@import '../../pages/minjiJeong/Main/Main.scss';
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 0;
+  border-bottom: 2px solid $theme-color-border;
+  background-color: #ffffff;
+  z-index: 1;
+}
+
+.service_logo {
+  padding-top: 5px;
+  transform: scale(1.6);
+}
+
+.service_name {
+  margin-left: 15px;
+  padding-left: 15px;
+  font-family: 'Satisfy', cursive;
+  font-size: 20px;
+  font-weight: bold;
+  border-left: 2px solid black;
+}
+
+.nav_column {
+  position: relative;
+}
+
+.nav_column {
+  button {
+    img {
+      width: 26px;
+      margin: 0 5px;
+    }
+  }
+}

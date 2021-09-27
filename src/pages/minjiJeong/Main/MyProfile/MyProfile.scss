@@ -1,0 +1,30 @@
+@import '../Main.scss';
+
+.show_account {
+  @include flex-space-between;
+  flex-direction: row;
+  padding-left: 4px;
+}
+
+.show_account {
+  div {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    padding-left: 10px;
+  }
+}
+
+.show_account {
+  .time_ago {
+    padding: 0;
+    margin-top: 4px;
+  }
+}
+
+.user_description {
+  margin-top: 6px;
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: 600;
+  font-size: 13px;
+}

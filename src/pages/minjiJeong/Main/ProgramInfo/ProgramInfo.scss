@@ -1,3 +1,17 @@
+.program_info {
+  ul {
+    margin: 20px 0;
+  }
+
+  span {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.3);
+  }
+}
+
 .program_info_list {
   display: inline-block;
 

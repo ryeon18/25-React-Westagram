@@ -1,51 +1,44 @@
 import React from 'react';
-import Comment from '../Comment/Comment';
+import FeedItem from './FeedItem';
 import './Feed.scss';
 
 class Feed extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      feedList: [],
+    };
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:3000/data/feedData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          feedList: data,
+        });
+      });
+  }
+
   render() {
     return (
-      <div className="article">
-        <div className="article_header">
-          <div className="header_user">
-            <img
-              className="profile_s"
-              alt="user_profile"
-              src={this.props.userImage}
+      <div className="articles_area">
+        {this.state.feedList.map(el => {
+          return (
+            <FeedItem
+              key={el.id}
+              userId={el.userId}
+              userImage={el.userImage}
+              feedImage={el.feedImage}
+              likedAccount={el.likedAccount}
+              like={el.like}
+              content={el.content}
+              comments={el.comments}
             />
-            <span className="user_name">{this.props.userId}</span>
-          </div>
-          <i className="fas fa-ellipsis-h"></i>
-        </div>
-        <div className="article_media">
-          <img alt="pasta" src={this.props.feedImage} />
-        </div>
-        <div className="article_menu">
-          <div className="menu_column">
-            <i className="far fa-heart"></i>
-            <i className="far fa-comment"></i>
-            <i className="far fa-share-square"></i>
-          </div>
-          <i className="far fa-bookmark"></i>
-        </div>
-        <div className="article_subscript">
-          <img
-            className="profile_sm"
-            alt="mountain"
-            src="images/minjiJeong/mount.jpg"
-          />
-          <h5>
-            <span className="user_id">{this.props.likedAccount}</span>님&nbsp;
-            <span className="like_count">외 {this.props.like}명</span>이
-            좋아합니다
-          </h5>
-        </div>
-        <div className="article_text">
-          <span className="user_id">_minji.jeong</span>
-          {this.props.content}
-          <span className="show_more">더 보기</span>
-        </div>
-        <Comment commentList={this.props.comments} />
+          );
+        })}
       </div>
     );
   }

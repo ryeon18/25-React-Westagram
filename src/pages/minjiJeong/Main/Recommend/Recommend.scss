@@ -1,0 +1,53 @@
+@import '../Main.scss';
+
+.recommend_friends {
+  width: 100%;
+  margin-top: 20px;
+  overflow: scroll;
+  border-radius: 4px;
+  background-color: #ffffff;
+  border: 2px solid $theme-color-border;
+}
+
+.recommend_header {
+  @include flex-space-between;
+  flex-direction: row;
+  padding: 15px 10px;
+}
+
+.recommend_header {
+  h5 {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.4);
+  }
+}
+
+.recommend_contents {
+  padding: 0 10px;
+}
+
+.recommend_row {
+  @include flex-space-between;
+  flex-direction: row;
+  margin-bottom: 10px;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 65%;
+  }
+}
+
+.friends_info {
+  margin-top: 3px;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.btn_follow {
+  font-size: 13px;
+  font-weight: bold;
+  color: $theme-color-button;
+}
