@@ -8,7 +8,7 @@ class MyProfile extends React.Component {
         <img
           className="profile_m"
           alt="user_profile"
-          src="images/minjiJeong/me.jpg"
+          src="images/minjiJeong/ocean.jpg"
         />
         <div>
           <h5 className="my_id user_id">_minji.jeong</h5>

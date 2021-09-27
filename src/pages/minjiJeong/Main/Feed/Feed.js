@@ -1,6 +1,5 @@
 import React from 'react';
 import FeedItem from './FeedItem';
-import './Feed.scss';
 
 class Feed extends React.Component {
   constructor() {
@@ -33,6 +32,7 @@ class Feed extends React.Component {
               userImage={el.userImage}
               feedImage={el.feedImage}
               likedAccount={el.likedAccount}
+              likedAccountImage={el.likedAccountImage}
               like={el.like}
               content={el.content}
               comments={el.comments}

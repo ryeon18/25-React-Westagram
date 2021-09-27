@@ -32,7 +32,7 @@ class Feed extends React.Component {
           <img
             className="profile_sm"
             alt="mountain"
-            src="images/minjiJeong/mount.jpg"
+            src={this.props.likedAccountImage}
           />
           <h5>
             <span className="user_id">{this.props.likedAccount}</span>님&nbsp;

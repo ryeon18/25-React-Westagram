@@ -60,6 +60,7 @@ class Comment extends React.Component {
   };
 
   render() {
+    console.log(this.state.content ? true : false);
     return (
       <>
         <div className="article_comments">
@@ -94,6 +95,7 @@ class Comment extends React.Component {
             className="btn_upload"
             type="button"
             onClick={this.uploadComment}
+            style={{ opacity: this.state.content ? 1 : 0.4 }}
           >
             게시
           </button>

@@ -16,7 +16,7 @@ class Recommend extends React.Component {
             <img
               className="profile_s"
               alt="conference"
-              src="images/minjiJeong/blue.jpg"
+              src="images/minjiJeong/mount.jpg"
             />
             <div>
               <h5 className="user_id">haedal</h5>
@@ -30,7 +30,7 @@ class Recommend extends React.Component {
             <img
               className="profile_s"
               alt="ocean"
-              src="images/minjiJeong/ocean.jpg"
+              src="images/minjiJeong/juice.jpg"
             />
             <div>
               <h5 className="user_id">sooooya</h5>

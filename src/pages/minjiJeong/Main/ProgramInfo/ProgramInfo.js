@@ -8,7 +8,7 @@ class ProgramInfo extends React.Component {
       <div className="program_info">
         <ul>
           {INFO_LIST.map(el => (
-            <li className="program_info_list">
+            <li className="program_info_list" key={el.id}>
               <a href="/">{el.content}</a>
             </li>
           ))}
