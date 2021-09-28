@@ -1,9 +1,6 @@
 import React from 'react';
-import '../../../pages/seyeonPark/Login/Login.scss';
-import '../../../styles/common.scss';
-import '../../../styles/reset.scss';
-import '../../../styles/variable.scss';
 import LoginBox from '../components/LoginBox';
+import '../../../pages/seyeonPark/Login/Login.scss';
 
 class Login extends React.Component {
   constructor() {
@@ -14,22 +11,17 @@ class Login extends React.Component {
       isButtonOn: false,
     };
   }
-
-  handleIdInput = event => {
+  // 이벤트 핸들러가 제대로 불리는지 콘솔로 꼭 찍어보기
+  handleInput = event => {
+    const { name, value } = event.target;
     this.setState({
-      inputIdValue: event.target.value,
-    });
-  };
-
-  handlePwInput = event => {
-    this.setState({
-      inputPwValue: event.target.value,
+      [name]: value,
     });
   };
 
   changeButton = () => {
-    const { inputIdValue, inputPwValue } = this.state;
-    inputIdValue.indexOf('@') !== -1 && inputPwValue.length >= 5
+    this.state.inputIdValue.indexOf('@') !== -1 &&
+    this.state.inputPwValue.length >= 5
       ? this.setState({ isButtonOn: true })
       : this.setState({ isButtonOn: false });
   };
@@ -44,11 +36,7 @@ class Login extends React.Component {
       <div className="loginContainer">
         <main className="container">
           <h1>Westagram</h1>
-          <LoginBox
-            getIdValue={this.handleIdInput}
-            getPwValue={this.handlePwInput}
-            changeBtn={this.changeButton}
-          />
+          <LoginBox onChange={this.handleInput} changeBtn={this.changeButton} />
           <button
             className={isButtonOn ? 'changeBtnColor' : 'button'}
             onClick={this.goToMain}

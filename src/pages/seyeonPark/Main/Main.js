@@ -5,9 +5,6 @@ import AsideStory from '../components/AsideStory';
 import AsideRecommend from '../components/AsideRecommend';
 import Footer from '../components/Footer';
 import '../../../pages/seyeonPark/Main/Main.scss';
-import '../../../styles/common.scss';
-import '../../../styles/reset.scss';
-import '../../../styles/variable.scss';
 
 class Main extends React.Component {
   constructor() {
@@ -57,8 +54,8 @@ class Main extends React.Component {
   };
 
   enterEvent = e => {
-    const { comment } = this.state;
-    if (e.key === 'Enter' && comment) {
+    // const { comment } = this.state;
+    if (e.key === 'Enter') {
       this.uploadComment();
     }
   };

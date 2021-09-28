@@ -1,3 +1,5 @@
+@import '../../../styles/variable.scss';
+
 .loginContainer {
     display: flex;
     justify-content: center;
@@ -12,7 +14,7 @@
     justify-content: center;
     align-items: center;
     width: 400px;
-    border: 1px solid #ebebeb;
+    border: 1px solid $theme-color-border;
     background-color: white;
   
     h1 {
@@ -29,7 +31,7 @@
     padding: 10px;
     width: 80%;
     background-color: #fafafa;
-    border: 1px solid #ebebeb;
+    border: 1px solid $theme-color-border;
     border-radius: 3px;
   }
   
