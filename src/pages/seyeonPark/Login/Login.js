@@ -1,5 +1,5 @@
 import React from 'react';
-import LoginBox from '../components/LoginBox';
+import LoginBox from './LoginComponent/LoginBox';
 import '../../../pages/seyeonPark/Login/Login.scss';
 
 class Login extends React.Component {

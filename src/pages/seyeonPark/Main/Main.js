@@ -1,9 +1,9 @@
 import React from 'react';
-import Nav from '../components/Nav';
-import Feed from '../components/Feed';
-import AsideStory from '../components/AsideStory';
-import AsideRecommend from '../components/AsideRecommend';
-import Footer from '../components/Footer';
+import Nav from '../Main/MainComponent/Nav';
+import Feed from '../Main/MainComponent/Feed';
+import AsideStory from '../Main/MainComponent/AsideStory';
+import AsideRecommend from '../Main/MainComponent/AsideRecommend';
+import Footer from '../Main/MainComponent/Footer';
 import '../../../pages/seyeonPark/Main/Main.scss';
 
 class Main extends React.Component {

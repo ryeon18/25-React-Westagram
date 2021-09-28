@@ -1,5 +1,5 @@
 import React from 'react';
-import Comment from '../components/Comment';
+import Comment from '../MainComponent/Comment';
 
 class Feed extends React.Component {
   render() {
