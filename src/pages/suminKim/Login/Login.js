@@ -2,6 +2,7 @@ import React from 'react';
 import './Login.scss';
 import '../../../styles/common.scss';
 import '../../../styles/reset.scss';
+import '../../../styles/variable.scss';
 
 //     // <!-- 글꼴 -->
 //     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -75,7 +76,7 @@ class Login extends React.Component {
             로그인
           </button>
         </div>
-        <a href="#">비밀번호를 잊으셨나요?</a>
+        <link to="/">비밀번호를 잊으셨나요?</link>
       </div>
     );
   }

@@ -4,36 +4,32 @@
 }
 
 .mainBody {
-  *{
-      box-sizing: border-box;
-      margin:0;
-      padding:0;
-      }
-      
-      html,body{
-          height: 100%;
-      }
-  
-  header {
-      margin-bottom: 30px;
+  * {
+    margin: 0;
+    padding: 0;
   }
+}
 
-  nav {
+header {
+  margin-bottom: 30px;
+}
+
+nav {
   @include flex-center;
   background-color: white;
   justify-content: space-between;
   border-bottom: 1px solid lightgray;
-  }
+}
 
-  .myPage {
+.myPage {
   width: 40px;
-  }
+}
 
-  .topIcon {
+.topIcon {
   @include flex-center;
-  }
-  
-  .fa-heart {
+}
+
+.fa-heart {
   padding: 0 16px;
 }
 
@@ -72,8 +68,8 @@
   border-radius: 3px;
 
   &::placeholder {
-  text-align: center;
-  color: #c1c1c4;
+    text-align: center;
+    color: #c1c1c4;
   }
 }
 
@@ -107,13 +103,14 @@ section {
   @include flex-center;
   justify-content: space-between;
   padding: 0 20px;
-  height: 50px;    
+  height: 50px;
 }
 
-  .id_img1 {
+.id_img1 {
   width: 40px;
   border-radius: 50%;
-  margin-right: 10px}
+  margin-right: 10px;
+}
 
 .leftId {
   font-size: 15px;
@@ -241,7 +238,6 @@ section {
 }
 
 .pushBotton {
-  // height: 100%;
   width: 65px;
   color: rgb(78, 153, 214);
   background-color: white;
@@ -251,7 +247,6 @@ section {
 /* ------right Box ------ */
 
 .mainRight {
-  /* margin-right: 210px; */
   width: 400px;
   padding: 5px 10px;
 }
@@ -284,23 +279,27 @@ section {
   color: gray;
 }
 
-.storyBoxFirst, .storyBoxSecond {
+.storyBoxFirst,
+.storyBoxSecond {
   margin-bottom: 15px;
   border: 2px solid lightgray;
 }
 
-.storyText, .chuchunBox {
+.storyText,
+.chuchunBox {
   display: flex;
   justify-content: space-between;
   padding: 10px 15px;
 }
 
-.story, .chuchun {
+.story,
+.chuchun {
   font-size: 18px;
   color: gray;
 }
 
-.modubogy, .modubogySecond {
+.modubogy,
+.modubogySecond {
   font-size: 16px;
   font-weight: bold;
 }
@@ -327,30 +326,33 @@ section {
   border: 3px solid rgb(247, 53, 150);
 }
 
-.storyIdClass, .chuchunIdClass {
+.storyIdClass,
+.chuchunIdClass {
   text-align: left;
   padding-left: 15px;
   padding-top: 6px;
 }
 
-.storyId, .chuchunId {
+.storyId,
+.chuchunId {
   font-size: 17px;
 }
 
-.storyTime, .chuchunTime {
-
+.storyTime,
+.chuchunTime {
   padding-top: 2px;
   font-size: 13px;
   color: gray;
 }
 
-.chuchunImgWheee, .chuchunImgRrrro_k {
+.chuchunImgWheee,
+.chuchunImgRrrro_k {
   width: 50px;
   height: 50px;
   border-radius: 50%;
 }
 
-.chuchunImg{
+.chuchunImg {
   width: 53px;
   height: 53px;
   padding: 2px;
@@ -362,7 +364,7 @@ section {
   width: 50px;
   right: 300px;
   background-color: transparent;
-  color:#0096f6;
+  color: #0096f6;
   padding: 13px 0;
   font-weight: bold;
   font-size: 15px;
@@ -377,5 +379,4 @@ section {
   padding-left: 10px;
   letter-spacing: 0.5px;
   line-height: 1.5;
-}
 }

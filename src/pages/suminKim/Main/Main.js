@@ -2,6 +2,7 @@ import React from 'react';
 import './Main.scss';
 import '../../../styles/common.scss';
 import '../../../styles/reset.scss';
+import '../../../styles/variable.scss';
 
 class Main extends React.Component {
   constructor() {
@@ -57,22 +58,22 @@ class Main extends React.Component {
               <i className="fas fa-search searchxx" />
             </div>
             <div className="topIcon">
-              <a href="">
+              <link to="/">
                 <i className="far fa-compass icon" />
-              </a>
-              <a href="">
+              </link>
+              <link to="/">
                 <i className="far fa-heart icon" />
-              </a>
-              <a href="">
+              </link>
+              <link to="/">
                 <i className="far fa-user icon" />
-              </a>
-              <a href="">
+              </link>
+              <link to="/">
                 <img
                   className="myPage"
                   alt="myPage"
                   src="/images/suminKim/오구.png"
                 />
-              </a>
+              </link>
             </div>
           </nav>
         </header>
