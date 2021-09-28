@@ -89,7 +89,6 @@
   .feedHeader {
     display: flex;
     padding: 10px;
-    justify-content: space-between;
     border-bottom: 1px solid #ebebeb;
     height: 40px;
   }
@@ -97,7 +96,9 @@
   /* 피드헤드 아이디 */
   
   .feediginfo {
-    padding-top: 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   
   .feedHeaderIdImg {
@@ -117,7 +118,6 @@
     span {
       border: none;
       padding-right: 250px;
-      padding-bottom: 20px;
     }
   
     button {
@@ -196,7 +196,15 @@
     justify-content: space-between;
     align-items: center;
   }
-  
+ 
+  .likeHeart {
+    color: red;
+  }
+
+  .unlikeHeart {
+    color: black;
+  }
+
   /* 댓글창 */
   
   .inputComment {
@@ -228,21 +236,21 @@
   }
 
   .thirdMessage {
-    width: 398px;
     display: flex;
-  }
-
-  .thirdMessage li {
     width: 398px;
+    
+    li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-
-  .thirdMessage span {
-    font-weight: bold;
+    width: 398px;
   }
   
+    span {
+    font-weight: bold;
+  }
+}
+
   /* --사이드-- */
   
   .main-right {
@@ -394,9 +402,9 @@
   .followButton {
     justify-content: center;
     align-items: center;
-    width: 60px;
     padding: 5px;
     padding-top: 8px;
+    width: 60px;
     text-decoration: none;
     font-size: 13px;
   

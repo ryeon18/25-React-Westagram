@@ -2,7 +2,7 @@ import React from 'react';
 
 class Comment extends React.Component {
   render() {
-    const { commentBox, isHeartChange, changeHearColor } = this.props;
+    const { commentBox, isHeartChange, changeHeartColor } = this.props;
     return (
       <>
         <ul>
@@ -12,14 +12,12 @@ class Comment extends React.Component {
                 <span>{comment.userId}</span>
                 {comment.content}
               </div>
-              <button onClick={changeHearColor}>
+              <button onClick={changeHeartColor}>
                 <img
                   alt="checkingHeart"
                   src="../../images/seyeonPark/heart.png"
                   width="12px"
-                  style={{
-                    color: isHeartChange ? 'red' : 'black',
-                  }}
+                  className={isHeartChange ? 'likeHeart' : 'unlikeHeart'}
                 />
               </button>
             </li>

@@ -63,7 +63,7 @@ class AsideStory extends React.Component {
             <div className="userInfo">
               <p>
                 <a className="sideId" href="/">
-                  같은이미지다
+                  같은이미지
                 </a>
               </p>
               <span>1분 전</span>

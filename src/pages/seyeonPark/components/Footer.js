@@ -6,19 +6,16 @@ class Footer extends React.Component {
       <article className="footer">
         <ul className="footerlist">
           <li>
-            <a href="/">Instaram 정보</a>
+            <a href="/">소개</a>
           </li>
           <li>
-            <a href="/">지원</a>
-          </li>
-          <li>
-            <a href="/">홍보 센터</a>
+            <a href="/">도움말</a>
           </li>
           <li>
             <a href="/">API</a>
           </li>
           <li>
-            <a href="/">채용 정보</a>
+            <a href="/">채용정보</a>
           </li>
           <li>
             <a href="/">개인정보처리방침</a>
@@ -27,13 +24,13 @@ class Footer extends React.Component {
             <a href="/">약관</a>
           </li>
           <li>
-            <a href="/">디렉터리</a>
+            <a href="/">위치</a>
           </li>
           <li>
-            <a href="/">프로필</a>
+            <a href="/">인기계정</a>
           </li>
           <li>
-            <a href="/">해시태그</a>
+            <a href="/">해쉬태그</a>
           </li>
           <li>
             <a href="/">언어</a>
