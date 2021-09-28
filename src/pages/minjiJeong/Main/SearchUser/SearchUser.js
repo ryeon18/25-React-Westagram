@@ -42,10 +42,11 @@ class SearchUser extends React.Component {
           onChange={this.filterUser}
         />
         <div
-          className="search_result_box"
-          style={{
-            display: this.state.filteredList.length === 0 ? 'none' : 'block',
-          }}
+          className={`search_result_box ${
+            this.state.filteredList.length === 0
+              ? 'hideSearchBox'
+              : 'showSearchBox'
+          }`}
         >
           <div className="search_result_arrow"></div>
           <ul>

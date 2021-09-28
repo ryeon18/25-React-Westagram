@@ -92,10 +92,11 @@ class Comment extends React.Component {
             value={this.state.content}
           ></textarea>
           <button
-            className="btn_upload"
+            className={`uploadBtn ${
+              this.state.content ? 'activeBtn' : 'disableBtn'
+            }`}
             type="button"
             onClick={this.uploadComment}
-            style={{ opacity: this.state.content ? 1 : 0.4 }}
           >
             게시
           </button>

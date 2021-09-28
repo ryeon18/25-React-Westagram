@@ -6,8 +6,6 @@ import Story from './Story/Story';
 import Recommend from './Recommend/Recommend';
 import ProgramInfo from './ProgramInfo/ProgramInfo';
 import './Main.scss';
-import '../../../styles/reset.scss';
-import '../../../styles/common.scss';
 
 class Main extends React.Component {
   render() {

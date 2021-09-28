@@ -2,6 +2,7 @@
 
 .search_result_box {
   @include modal;
+
   top: 52px;
   left: 5px;
   min-height: 50px;
@@ -24,6 +25,14 @@
       }
     }
   }
+}
+
+.showSearchBox {
+  display: block;
+}
+
+.hideSearchBox {
+  display: none;
 }
 
 .search_result_arrow {

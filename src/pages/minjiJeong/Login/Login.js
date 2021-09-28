@@ -56,10 +56,9 @@ class Login extends React.Component {
             onChange={this.handlePw}
           />
           <button
-            className="btn_login"
+            className={`loginBtn ${enableBtn ? 'activeBtn' : 'disableBtn'}`}
             type="button"
             disabled={!enableBtn}
-            style={{ opacity: enableBtn ? 1 : 0.4 }}
             onClick={this.goToMain}
           >
             로그인
