@@ -1,8 +1,9 @@
+import { formatWithCursor } from 'prettier';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 import '../Login/Login.scss';
-import '../../../styles/common.scss';
+// import '../../../styles/common.scss';
 
 class Login extends React.Component {
   constructor() {
@@ -17,31 +18,64 @@ class Login extends React.Component {
   handleIdInput = e => {
     const { name, value } = e.target;
     this.setState({
-      [name]: value,
+      idValue: e.target.value,
+    });
+  };
+
+  handlePwInput = e => {
+    const { name, value } = e.target;
+    this.setState({
+      pwValue: e.target.value,
     });
   };
 
   handleButton = () => {
     const { idValue, pwValue } = this.state;
-    idValue.indexOf('@') && pwValue.length > 5
+    idValue.indexOf('@') !== -1 && pwValue.length > 5
       ? this.setState({ isButtonOn: true })
       : this.setState({ isButtonOn: false });
   };
 
-  goToMain = () => {
-    const { isButtonOn, idValue } = this.state;
-    if (isButtonOn) {
-      if (idValue.length >= 8 && idValue.indexOf('@')) {
-        this.props.history.push('/main-sunho');
-      } else {
-        alert('아이디를 다시 확인하세요');
-      }
-    } else {
-      alert('비밀번호를 다시 확인하세요');
-    }
+  // goToMain = () => {
+  //   const { isButtonOn, idValue } = this.state;
+  //   if (isButtonOn && idValue.indexOf('@')) {
+  //     this.props.history.push('/main-sunho');
+  //   } else {
+  //     alert('비밀번호를 다시 확인하세요');
+  //   }
+  // };
+
+  handleClick = () => {
+    fetch('http://10.58.3.128:8000/users/signin', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: this.state.idValue,
+        password: this.state.pwValue,
+      }),
+    })
+      .then(response => response.json())
+      .then(result => console.log('success'));
   };
 
+  // handleClick=()=>{
+  //   fetch('api:singin',{
+  //     mathod:'POST',
+  //     body: JSON.stringify({
+  //       email: this.state.idValue,
+  //       password: this.state.pwValue,
+  //     }),
+  //   })
+  //   .then((response) => response.json())
+  //   .then((response) => {
+  //     if(response.token){
+  //         localStorage.setItem('token', respones.token);
+  //         this.props.history.push('/main-sunho');
+  //     }
+  //   })
+  // }
+
   render() {
+    // console.log(this.fetch);
     const { isButtonOn } = this.state;
     return (
       <>
@@ -62,14 +96,15 @@ class Login extends React.Component {
                   type="password"
                   id="password"
                   placeholder="비밀번호"
-                  onChange={this.handleIdInput}
+                  onChange={this.handlePwInput}
                   onKeyUp={this.handleButton}
                   name="pwValue"
                 />
               </form>
               <div className="loginBtn">
                 <button
-                  onClick={this.goToMain}
+                  // onClick={this.goToMain}
+                  onClick={this.handleClick}
                   className={isButtonOn ? 'buttonOn' : 'buttonOff'}
                 >
                   로그인
