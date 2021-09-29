@@ -28,22 +28,23 @@ class Login extends React.Component {
   };
 
   handleLogin = () => {
-    fetch('http: //10.58.1.9:8000/users/signin/', {
-      method: 'POST',
-      body: JSON.stringify({
-        email: this.state.idValue,
-        password: this.state.pwValue,
-      }),
-    })
-      .then(res => res.json())
-      .then(res => {
-        if (res.token) {
-          localStorage.setItem('token', res.token);
-          this.props.history.push('/main-minji');
-        } else {
-          alert('Error');
-        }
-      });
+    // fetch('http: //10.58.1.9:8000/users/signin/', {
+    //   method: 'POST',
+    //   body: JSON.stringify({
+    //     email: this.state.idValue,
+    //     password: this.state.pwValue,
+    //   }),
+    // })
+    //   .then(res => res.json())
+    //   .then(res => {
+    //     if (res.token) {
+    //       localStorage.setItem('token', res.token);
+    //       this.props.history.push('/main-minji');
+    //     } else {
+    //       alert('Error');
+    //     }
+    //   });
+    this.props.history.push('/main-minji');
   };
 
   render() {

@@ -1,6 +1,7 @@
 import React from 'react';
 import CommentList from './CommentList';
 import './Comment.scss';
+import COMMENT_LIST from './commentData';
 
 let id = 4;
 
@@ -13,6 +14,12 @@ class Comment extends React.Component {
       isLiked: false,
     };
   }
+
+  componentDidMount = () => {
+    this.setState({
+      commentList: COMMENT_LIST[this.props.feedId],
+    });
+  };
 
   getComment = e => {
     this.setState({
@@ -60,20 +67,19 @@ class Comment extends React.Component {
       <>
         <div className="article_comments">
           {/* 추가될 댓글 위치 */}
-          {this.props.commentList[0] &&
-            this.props.commentList[0][this.props.feedId].map(comment => {
-              return (
-                <CommentList
-                  key={comment.id}
-                  id={comment.id}
-                  userId={comment.userId}
-                  content={comment.content}
-                  isLiked={comment.isLiked}
-                  toggleLike={this.handleToggleLike}
-                  removeComment={this.removeComment}
-                />
-              );
-            })}
+          {this.state.commentList.map(el => {
+            return (
+              <CommentList
+                key={el.id}
+                id={el.id}
+                userId={el.userId}
+                content={el.content}
+                isLiked={el.isLiked}
+                toggleLike={this.toggleLike}
+                removeComment={this.removeComment}
+              />
+            );
+          })}
         </div>
         <div className="time_ago">
           <span className="pass_time">42</span>분 전
