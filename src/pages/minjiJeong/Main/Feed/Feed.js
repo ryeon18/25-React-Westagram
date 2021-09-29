@@ -6,6 +6,7 @@ class Feed extends React.Component {
     super();
     this.state = {
       feedList: [],
+      commentList: [],
     };
   }
 
@@ -19,6 +20,16 @@ class Feed extends React.Component {
           feedList: data,
         });
       });
+
+    fetch('http://localhost:3000/data/commentData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          commentList: data,
+        });
+      });
   }
 
   render() {
@@ -28,6 +39,7 @@ class Feed extends React.Component {
           return (
             <FeedItem
               key={el.id}
+              feedId={el.id}
               userId={el.userId}
               userImage={el.userImage}
               feedImage={el.feedImage}
@@ -35,7 +47,7 @@ class Feed extends React.Component {
               likedAccountImage={el.likedAccountImage}
               like={el.like}
               content={el.content}
-              comments={el.comments}
+              commentList={this.state.commentList.filter(c => el.id in c)}
             />
           );
         })}

@@ -14,10 +14,6 @@ class Comment extends React.Component {
     };
   }
 
-  componentDidMount() {
-    this.setState({ commentList: this.props.commentList });
-  }
-
   getComment = e => {
     this.setState({
       content: e.target.value,
@@ -60,24 +56,24 @@ class Comment extends React.Component {
   };
 
   render() {
-    console.log(this.state.content ? true : false);
     return (
       <>
         <div className="article_comments">
           {/* 추가될 댓글 위치 */}
-          {this.state.commentList.map(el => {
-            return (
-              <CommentList
-                key={el.id}
-                id={el.id}
-                userId={el.userId}
-                content={el.content}
-                isLiked={el.isLiked}
-                toggleLike={this.toggleLike}
-                removeComment={this.removeComment}
-              />
-            );
-          })}
+          {this.props.commentList[0] &&
+            this.props.commentList[0][this.props.feedId].map(comment => {
+              return (
+                <CommentList
+                  key={comment.id}
+                  id={comment.id}
+                  userId={comment.userId}
+                  content={comment.content}
+                  isLiked={comment.isLiked}
+                  toggleLike={this.handleToggleLike}
+                  removeComment={this.removeComment}
+                />
+              );
+            })}
         </div>
         <div className="time_ago">
           <span className="pass_time">42</span>분 전

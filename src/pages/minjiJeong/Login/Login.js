@@ -10,6 +10,8 @@ class Login extends React.Component {
     this.state = {
       idValue: '',
       pwValue: '',
+      phone: '010-9945-7580',
+      name: 'minjiJeong',
     };
   }
 
@@ -25,13 +27,28 @@ class Login extends React.Component {
     });
   };
 
-  goToMain = () => {
-    this.props.history.push('/main-minji');
+  handleLogin = () => {
+    fetch('http: //10.58.1.9:8000/users/signin/', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: this.state.idValue,
+        password: this.state.pwValue,
+      }),
+    })
+      .then(res => res.json())
+      .then(res => {
+        if (res.token) {
+          localStorage.setItem('token', res.token);
+          this.props.history.push('/main-minji');
+        } else {
+          alert('Error');
+        }
+      });
   };
 
   render() {
     const enableBtn =
-      this.state.idValue.includes('@') && this.state.pwValue.length >= 5;
+      this.state.idValue.includes('@') && this.state.pwValue.length >= 8;
 
     return (
       <div className="container">
@@ -59,12 +76,12 @@ class Login extends React.Component {
             className={`loginBtn ${enableBtn ? 'activeBtn' : 'disableBtn'}`}
             type="button"
             disabled={!enableBtn}
-            onClick={this.goToMain}
+            onClick={this.handleLogin}
           >
             로그인
           </button>
         </form>
-        <a class="find_pw" href="/">
+        <a className="find_pw" href="/">
           비밀번호를 잊으셨나요?
         </a>
       </div>

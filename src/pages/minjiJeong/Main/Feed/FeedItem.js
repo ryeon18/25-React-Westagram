@@ -45,7 +45,10 @@ class Feed extends React.Component {
           {this.props.content}
           <span className="show_more">더 보기</span>
         </div>
-        <Comment commentList={this.props.comments} />
+        <Comment
+          commentList={this.props.commentList}
+          feedId={this.props.feedId}
+        />
       </div>
     );
   }
