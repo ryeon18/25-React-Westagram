@@ -3,6 +3,7 @@ import '../../../styles/reset.scss';
 import '../../../styles/common.scss';
 import '../Login/Login.scss';
 import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class Login extends React.Component {
   constructor() {
@@ -28,28 +29,32 @@ class Login extends React.Component {
   };
 
   handleLogin = () => {
-    // fetch('http: //10.58.1.9:8000/users/signin/', {
+    this.props.history.push('/main-minji');
+
+    // Backend 통신 시 사용
+    // fetch('http://10.58.1.9:8000/users/signup', {
     //   method: 'POST',
     //   body: JSON.stringify({
     //     email: this.state.idValue,
     //     password: this.state.pwValue,
-    //   }),
-    // })
-    //   .then(res => res.json())
-    //   .then(res => {
-    //     if (res.token) {
-    //       localStorage.setItem('token', res.token);
-    //       this.props.history.push('/main-minji');
-    //     } else {
-    //       alert('Error');
-    //     }
-    //   });
-    this.props.history.push('/main-minji');
+    //     phone: this.state.phone,
+    //     name: this.state.name,
+    //   })
+    //     .then(response => response.json())
+    //     .then(response => {
+    //       if (response.token) {
+    //         localStorage.setItem('token', response.token);
+    //         this.props.history.push('/main-minji');
+    //       } else {
+    //         alert('Error');
+    //       }
+    //     }),
+    // });
   };
 
   render() {
     const enableBtn =
-      this.state.idValue.includes('@') && this.state.pwValue.length >= 8;
+      this.state.idValue.includes('@') && this.state.pwValue.length >= 5;
 
     return (
       <div className="container">
@@ -82,9 +87,9 @@ class Login extends React.Component {
             로그인
           </button>
         </form>
-        <a className="find_pw" href="/">
+        <Link className="find_pw" to="/account">
           비밀번호를 잊으셨나요?
-        </a>
+        </Link>
       </div>
     );
   }

@@ -11,9 +11,9 @@
 }
 
 .stories_header {
+  @include flex-space-between;
   position: sticky;
   top: 0;
-  @include flex-space-between;
   flex-direction: row;
   padding: 15px 15px 5px 15px;
   background-color: #ffffff;
@@ -33,8 +33,4 @@
 .stories_row {
   width: 100%;
   padding: 0 10px;
-}
-
-.stories_row .show_account {
-  margin: 10px 0px;
 }

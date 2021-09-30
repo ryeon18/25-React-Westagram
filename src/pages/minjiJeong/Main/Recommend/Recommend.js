@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import Profile from '../Profile/Profile';
 import './Recommend.scss';
 
 class Recommend extends React.Component {
@@ -7,51 +9,40 @@ class Recommend extends React.Component {
       <div className="recommend_friends">
         <div className="recommend_header">
           <h5>회원님을 위한 추천</h5>
-          <a className="show_all" href="/">
+          <Link className="show_all" to="/">
             모두 보기
-          </a>
+          </Link>
         </div>
         <div className="recommend_contents">
           <div className="recommend_row">
-            <img
-              className="profile_s"
-              alt="conference"
-              src="images/minjiJeong/mount.jpg"
+            <Profile
+              imageSize="profile_s"
+              image="images/minjiJeong/mount.jpg"
+              userId="haedal"
+              description="timmie님 외 2명이 친구입니다."
             />
-            <div>
-              <h5 className="user_id">haedal</h5>
-              <h5 className="friends_info">jimmie님 외 2명이 친구입니다.</h5>
-            </div>
             <a className="btn_follow" href="/">
               팔로우
             </a>
           </div>
           <div className="recommend_row">
-            <img
-              className="profile_s"
-              alt="ocean"
-              src="images/minjiJeong/juice.jpg"
+            <Profile
+              imageSize="profile_s"
+              image="images/minjiJeong/puppy.png"
+              userId="star_coffee"
+              description="before_sunrise님 외 1명이 친구입니다."
             />
-            <div>
-              <h5 className="user_id">sooooya</h5>
-              <h5 className="friends_info">chris_yang님과 친구입니다.</h5>
-            </div>
             <a className="btn_follow" href="/">
               팔로우
             </a>
           </div>
           <div className="recommend_row">
-            <img
-              className="profile_s"
-              alt="white_puppy"
-              src="images/minjiJeong/puppy.png"
+            <Profile
+              imageSize="profile_s"
+              image="images/minjiJeong/bingsu.jpg"
+              userId="sooooya"
+              description="fairy_yoon님 외 3명이 친구입니다."
             />
-            <div>
-              <h5 className="user_id">star_coffee</h5>
-              <h5 className="friends_info">
-                before_sunrise님 외 1명이 친구입니다.
-              </h5>
-            </div>
             <a className="btn_follow" href="/">
               팔로우
             </a>

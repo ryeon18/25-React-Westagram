@@ -1,7 +1,7 @@
 import React from 'react';
 import Nav from '../../../components/Nav/Nav';
 import Feed from './Feed/Feed';
-import MyProfile from './MyProfile/MyProfile';
+import Profile from './Profile/Profile';
 import Story from './Story/Story';
 import Recommend from './Recommend/Recommend';
 import ProgramInfo from './ProgramInfo/ProgramInfo';
@@ -20,8 +20,13 @@ class Main extends React.Component {
         <Nav />
         <div className="main_container">
           <Feed />
-          <div className="side_area">
-            <MyProfile />
+          <div className="side_container">
+            <Profile
+              imageSize="profile_m"
+              image="images/minjiJeong/ocean.jpg"
+              userId="_minji.jeong"
+              description="정민지"
+            />
             <Story />
             <Recommend />
             <ProgramInfo />
