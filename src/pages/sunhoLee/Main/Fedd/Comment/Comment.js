@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import CommentList from './CommentList';
 
+let id = 4;
+
 class Comment extends Component {
   constructor() {
     super();
@@ -10,6 +12,10 @@ class Comment extends Component {
     };
   }
 
+  componentDidMount() {
+    this.setState({ commentView: this.props.comment });
+  }
+
   getCommentValue = e => {
     this.setState({
       comments: e.target.value,
@@ -17,18 +23,23 @@ class Comment extends Component {
   };
 
   uploadComment = e => {
-    this.state.commentView.push({
-      userId: 'dltjsgho',
-      content: this.state.comments,
-    });
+    if (this.state.comments.length > 0) {
+      this.state.commentView.push({
+        id: id,
+        userId: 'dltjsgho',
+        content: this.state.comments,
+      });
 
+      id++;
+    }
     this.setState({ comments: '' });
   };
 
   handleEnter = e => {
+    console.log('>>>>>>');
+    e.preventDefault();
     const { comments } = this.state;
-    if (e.code === 'Enter' && comments.length > 0) {
-      e.preventDefault();
+    if (comments.length > 0) {
       this.uploadComment();
     }
   };
@@ -37,24 +48,21 @@ class Comment extends Component {
     return (
       <>
         <div className="comment-view">
-          <p className="likeText">좋아요 563개</p>
           <ul className="comments">
-            <li>
-              <b>여니여니</b>&nbsp; 호주갬성
-            </li>
-            {this.state.commentView.map((el, idx) => {
+            {this.state.commentView.map(el => {
               return (
                 <CommentList
-                  key={idx}
-                  content={el.content}
+                  key={el.id}
                   userId={el.userId}
+                  content={el.content}
                 />
               );
             })}
+            {this.state.CommentList}
           </ul>
           <p className="date">1일 전</p>
         </div>
-        <form className="write">
+        <form className="write" onSubmit={this.handleEnter}>
           <div className="writeInner">
             <button className="emoticon">
               <i className="far fa-smile"></i>
@@ -64,7 +72,6 @@ class Comment extends Component {
               placeholder="댓글 달기..."
               name="inputValue"
               value={this.state.comments}
-              onKeyPress={this.handleEnter}
               onChange={this.getCommentValue}
             />
             <button
@@ -80,5 +87,4 @@ class Comment extends Component {
     );
   }
 }
-
 export default Comment;

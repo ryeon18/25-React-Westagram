@@ -117,17 +117,30 @@
     cursor: pointer;
   }
 
-  .comment-view {
-    padding: 10px 10px;
-  }
-
+  .comment-view,
   .likeText {
-    padding-bottom: 5px;
+    padding: 3px 12px;
   }
 
+  .subscript {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 10px;
+    padding-bottom: 10px;
+    font-size: 18px;
+
+    h5 {
+      margin-left: 10px;
+    }
+  }
+
+  .myComment {
+    padding: 0px 10px;
+  }
   .comments {
     position: relative;
-    top: 0;
+    top: 0px;
     right: 0;
   }
 
@@ -171,18 +184,11 @@
     resize: none;
   }
 
-  // .newComment .deleted {
-  //   position: absolute;
-  //   right: 5px;
-  //   font-size: 20px;
-  //   cursor: pointer;
-  //   transition: all 0.2s ease;
-
-  //   &:hover {
-  //     transform: scale(1.2);
-  //     font-weight: bold;
-  //   }
-  // }
+  .show_more {
+    color: #ccc;
+    cursor: pointer;
+    padding-left: 6px;
+  }
 
   .submit {
     flex-grow: 1;
