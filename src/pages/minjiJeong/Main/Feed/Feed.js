@@ -9,6 +9,7 @@ class Feed extends React.Component {
     };
   }
 
+  // feedData.json에서 피드 데이터 가져오기
   componentDidMount() {
     fetch('http://localhost:3000/data/feedData.json', {
       method: 'GET',
@@ -24,6 +25,7 @@ class Feed extends React.Component {
   render() {
     return (
       <div className="articles_area">
+        {/* FeedItem 엘리먼트 생성 */}
         {this.state.feedList.map(el => {
           return (
             <FeedItem

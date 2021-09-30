@@ -26,6 +26,7 @@ class SearchUser extends React.Component {
       user.userId.includes(e.target.value)
     );
 
+    // 필터링 된 값 없을 때, 전체 데이터 띄우는거 막기 위해 길이가 같은 경우 빈배열로 초기화
     this.setState({
       filteredList:
         filtered.length === this.state.userList.length ? [] : filtered,

@@ -3,6 +3,7 @@ import CommentList from './CommentList';
 import './Comment.scss';
 import COMMENT_LIST from './commentData';
 
+// 댓글 추가시 배열에 key값 추가해주기 위한 변수
 let id = 4;
 
 class Comment extends React.Component {
@@ -15,6 +16,7 @@ class Comment extends React.Component {
     };
   }
 
+  // 상수데이터 COMMENT_LIST에서 key값으로 해당 feedId를 가지고 있는 댓글 배열 state에 저장
   componentDidMount = () => {
     this.setState({
       commentList: COMMENT_LIST[this.props.feedId],
@@ -41,12 +43,13 @@ class Comment extends React.Component {
 
   handleEnter = e => {
     if (e.code === 'Enter') {
+      // textarea 초기화 된 뒤에 enter 입력되는거 방지
       e.preventDefault();
       this.uploadComment();
     }
   };
 
-  removeComment = (id, userId) => {
+  removeComment = id => {
     const newArr = this.state.commentList.filter(item => item.id !== id);
 
     this.setState({
@@ -54,6 +57,7 @@ class Comment extends React.Component {
     });
   };
 
+  // like toggle되어 값이 변경되었을 때, 그 값을 commentList 배열에 다시 넣어줌
   toggleLike = id => {
     this.setState({
       commentList: this.state.commentList.map(el =>

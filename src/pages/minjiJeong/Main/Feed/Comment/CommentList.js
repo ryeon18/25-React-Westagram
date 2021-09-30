@@ -27,6 +27,7 @@ class Comment extends React.Component {
     );
   }
 
+  // Comment 컴포넌트에서 받아온 함수 받기
   handleToggleLike = () => {
     this.props.toggleLike(this.props.id);
   };

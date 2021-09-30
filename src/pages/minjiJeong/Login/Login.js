@@ -53,6 +53,7 @@ class Login extends React.Component {
   };
 
   render() {
+    // 로그인 유효성 검사
     const enableBtn =
       this.state.idValue.includes('@') && this.state.pwValue.length >= 5;
 
