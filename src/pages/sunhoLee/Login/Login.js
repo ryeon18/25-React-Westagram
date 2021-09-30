@@ -45,17 +45,17 @@ class Login extends React.Component {
   //   }
   // };
 
-  handleClick = () => {
-    fetch('http://10.58.3.128:8000/users/signin', {
-      method: 'POST',
-      body: JSON.stringify({
-        email: this.state.idValue,
-        password: this.state.pwValue,
-      }),
-    })
-      .then(response => response.json())
-      .then(result => console.log('success'));
-  };
+  // handleClick = () => {
+  //   fetch('http://10.58.3.128:8000/users/signin', {
+  //     method: 'POST',
+  //     body: JSON.stringify({
+  //       email: this.state.idValue,
+  //       password: this.state.pwValue,
+  //     }),
+  //   })
+  //     .then(response => response.json())
+  //     .then(result => console.log('success'));
+  // };
 
   // handleClick=()=>{
   //   fetch('api:singin',{

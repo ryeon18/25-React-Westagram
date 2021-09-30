@@ -13,7 +13,9 @@ class Comment extends Component {
   }
 
   componentDidMount() {
-    this.setState({ commentView: this.props.comment });
+    this.setState({
+      commentView: this.props.comments,
+    });
   }
 
   getCommentValue = e => {
@@ -36,7 +38,6 @@ class Comment extends Component {
   };
 
   handleEnter = e => {
-    console.log('>>>>>>');
     e.preventDefault();
     const { comments } = this.state;
     if (comments.length > 0) {
@@ -45,6 +46,7 @@ class Comment extends Component {
   };
 
   render() {
+    console.log(this.props.comments);
     return (
       <>
         <div className="comment-view">
@@ -58,7 +60,6 @@ class Comment extends Component {
                 />
               );
             })}
-            {this.state.CommentList}
           </ul>
           <p className="date">1일 전</p>
         </div>

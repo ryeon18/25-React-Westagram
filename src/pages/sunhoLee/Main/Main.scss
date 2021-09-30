@@ -346,29 +346,33 @@
     color: #c5c5c5;
   }
 
-  blockquote {
+  .program_info {
     margin-top: 25px;
+  }
+  .program_info,
+  .program_info ul li a {
     color: #c5c5c5;
   }
-  blockquote ul {
+
+  .program_info ul {
     display: flex;
     flex-wrap: wrap;
   }
-  blockquote ul li {
+  .program_info ul li {
     padding: 3px;
     margin-left: 5px;
   }
 
-  blockquote ul li:after {
+  .program_info ul li:after {
     content: '\00B7';
     margin-left: 5px;
   }
 
-  blockquote ul li:last-child::after {
+  .program_info ul li:last-child::after {
     content: '';
   }
 
-  blockquote p {
+  .program_info p {
     text-align: left;
     margin: 25px 10px;
   }

@@ -49,7 +49,7 @@ class Item extends Component {
           {this.props.content}
           <span className="show_more">더 보기</span>
         </div>
-        <Comment comment={this.props.comment} />
+        <Comment comments={this.props.comments} />
       </div>
     );
   }
