@@ -14,10 +14,6 @@ nav {
   z-index: 1;
 }
 
-.nav_column {
-  position: relative;
-}
-
 .service_logo {
   padding-top: 5px;
   transform: scale(1.6);
@@ -30,6 +26,10 @@ nav {
   font-size: 20px;
   font-weight: bold;
   border-left: 2px solid black;
+}
+
+.nav_column {
+  position: relative;
 }
 
 .nav_column {

@@ -87,7 +87,7 @@ class Login extends React.Component {
             로그인
           </button>
         </form>
-        <Link className="find_pw" to="/account">
+        <Link className="find_pw" to="/find_account">
           비밀번호를 잊으셨나요?
         </Link>
       </div>

@@ -6,7 +6,6 @@ class Feed extends React.Component {
     super();
     this.state = {
       feedList: [],
-      commentList: [],
     };
   }
 
