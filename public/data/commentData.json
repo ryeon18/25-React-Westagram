@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "userName": "wecode",
+    "content": "오~ 수민님이 찍으셨나요? :D",
+    "isLiked": true
+  },
+  {
+    "id": 2,
+    "userName": "sikkk",
+    "content": "피드가 너무 좋아요 시간되시면 잠시 이야기좀 할 수 있을까요~?",
+    "isLiked": false
+  },
+  {
+    "id": 3,
+    "userName": "jay_Park",
+    "content": "대박! 주황빛 실화? 'o' ",
+    "isLiked": false
+  }
+]

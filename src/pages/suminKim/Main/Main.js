@@ -1,49 +1,11 @@
 import React from 'react';
+import FeedList from './FeedList';
+import { Link } from 'react-router-dom';
 import './Main.scss';
 import '../../../styles/common.scss';
 import '../../../styles/reset.scss';
-import '../../../styles/variable.scss';
 
 class Main extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      comment: '',
-      commentList: [],
-    };
-  }
-
-  commentInput = e => {
-    this.setState({
-      comment: e.target.value,
-    });
-  };
-
-  commentPush = e => {
-    if (e.key === 'Enter' && this.state.comment) {
-      this.setState({
-        commentList: [
-          ...this.state.commentList,
-          { comment: this.state.comment },
-        ],
-      });
-      e.target.value = '';
-    }
-  };
-
-  commentSubmit = () => {
-    if (this.state.comment) {
-      this.setState({
-        commentList: [
-          ...this.state.commentList,
-          { comment: this.state.comment },
-        ],
-      });
-      //초기화 안됨
-      this.comment = '';
-    }
-  };
-
   render() {
     console.log(this.state);
     return (
@@ -58,141 +20,30 @@ class Main extends React.Component {
               <i className="fas fa-search searchxx" />
             </div>
             <div className="topIcon">
-              <link to="/">
+              <Link to="/">
                 <i className="far fa-compass icon" />
-              </link>
-              <link to="/">
+              </Link>
+              <Link to="/">
                 <i className="far fa-heart icon" />
-              </link>
-              <link to="/">
+              </Link>
+              <Link to="/">
                 <i className="far fa-user icon" />
-              </link>
-              <link to="/">
+              </Link>
+              <Link to="/">
                 <img
                   className="myPage"
                   alt="myPage"
                   src="/images/suminKim/오구.png"
                 />
-              </link>
+              </Link>
             </div>
           </nav>
         </header>
         <section>
           <div className="feeds">
-            <div className="article">
-              <div className="feeds_top">
-                <div className="feedtopIdBox">
-                  <img
-                    className="id_img1"
-                    src="/images/suminKim/오구.png"
-                    alt="id_img1"
-                  />
-                  <span className="leftId">aaa__aaa</span>
-                </div>
-                <i className="fas fa-ellipsis-h threeDot" />
-              </div>
-              <img
-                alt="feedImg"
-                className="feedImg"
-                src="/images/suminKim/feedImg.png"
-              />
-              <div className="bottomIconBox">
-                <div className="bottmLeftBox">
-                  <i className="fas fa-heart redHeart" />
-                  <img
-                    alt="chat"
-                    className="chat"
-                    src="/images/suminKim/chat.png"
-                  />
-                  <img
-                    alt="sendDm"
-                    className="sendDm"
-                    src="/images/sendDm.png"
-                  />
-                </div>
-                <div className="bottomRightBox">
-                  <i className="far fa-bookmark" />
-                </div>
-              </div>
-              <div className="likeBox">
-                <img
-                  className="likeImg"
-                  alt="liskeImg"
-                  src="/images/suminKim/likeBox.png"
-                />
-                <span className="likeId">
-                  <b>bhanss</b>님 <b>외 534명</b>이 좋아합니다
-                </span>
-              </div>
-            </div>
-            <div className="contentClass">
-              <div className="contentBox">
-                <span className="content">
-                  <b>aaa__aaa</b> 오늘도 여전히 노을은 예쁘네:) 모두들...
-                </span>
-                <span className="thebogy"> 더 보기</span>
-              </div>
-              <div className="commentMore">
-                댓글 <span className="commentCount">130</span>개 모두 보기
-              </div>
-              {/* {<!-- 댓글 달리는곳 -->} */}
-              <div className="chatBox">
-                <div className="commendId">
-                  i_ddgg
-                  <span className="commend">헐 예뻐!</span>
-                </div>
-                <div className="binheartBox">
-                  <img
-                    alt="binheart"
-                    class="binheart"
-                    src="/images/suminKim/heart.png"
-                    onclick="binheart()"
-                  />
-                </div>
-              </div>
-              <ul className="test">
-                {/* {<!-- 댓글 -->} */}
-                {this.state.commentList.map((commentArray, index) => {
-                  return (
-                    <div key={index}>
-                      <div className="commendId">
-                        i_ddgg
-                        <span className="commend">{commentArray.comment}</span>
-                      </div>
-                      <div className="binheartBox">
-                        <img
-                          alt="binheart"
-                          class="binheart"
-                          src="/images/suminKim/heart.png"
-                          onclick="binheart()"
-                        />
-                      </div>
-                    </div>
-                  );
-                })}
-              </ul>
-
-              <div className="contentTime">방금</div>
-            </div>
-            {/* {<!-- 댓글달기 input -->} */}
-            <div className="chatClass">
-              <input
-                className="chat chat2"
-                type="text"
-                placeholder="댓글달기..."
-                onChange={this.commentInput}
-                onKeyPress={this.commentPush}
-              ></input>
-              <button
-                className="pushBotton"
-                type="submit"
-                onClick={this.commentSubmit}
-              >
-                <b>게시</b>
-              </button>
-            </div>
-            {/* {<!-- ----- -->} */}
+            <FeedList />
           </div>
+          {/* {<!-- ----- -->} */}
           <div className="mainRight">
             <div className="rightTopId">
               <img

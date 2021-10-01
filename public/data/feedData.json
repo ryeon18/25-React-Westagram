@@ -1,0 +1,22 @@
+[
+  {
+    "id": "p1",
+    "feedId": "aaa__aaa",
+    "idImg": "/images/suminKim/오구.png",
+    "feedImg": "/images/suminKim/feedImg.png",
+    "feedMent": "오늘도 여전히 노을은 예쁘네:) 모두들...",
+    "likeNumber": 534,
+    "timeStamp": "방금",
+    "commenCount": 130
+  },
+  {
+    "id": "p1",
+    "feedId": "aaa__aaa",
+    "idImg": "/images/suminKim/오구.png",
+    "feedImg": "/images/suminKim/feedImg.png",
+    "feedMent": "갬성",
+    "likeNumber": 534,
+    "timeStamp": "방금",
+    "commenCount": 130
+  }
+]
