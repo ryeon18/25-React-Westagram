@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../Recommend/Recommend.scss';
 
 class Recommend extends Component {
   render() {

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../MyPage/MyPage.scss';
 
 class MyPage extends Component {
   render() {

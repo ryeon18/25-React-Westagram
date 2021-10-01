@@ -1,0 +1,47 @@
+.myHome {
+  display: flex;
+  position: relative;
+}
+
+.myHomeImg {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  margin: 10px;
+  border: 3px solid transparent;
+  border-radius: 50%;
+  background-image: linear-gradient(#fff, #fff),
+    linear-gradient(to right, red 0%, orange 100%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.myHomeImg img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  border-radius: 50%;
+}
+
+.myName p:first-child {
+  margin-top: 25px;
+  font-weight: bold;
+}
+
+.myName p:last-child {
+  color: #8e8e8e;
+}
+
+.myHome a {
+  position: absolute;
+  top: 35px;
+  right: 0;
+  margin-right: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #0095f6;
+}

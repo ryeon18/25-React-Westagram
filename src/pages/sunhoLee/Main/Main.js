@@ -1,13 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-router-dom';
 import Nav from '../../../components/Nav/Nav';
-import Feed from './Fedd/Feed';
+import Feed from './Feed/Feed';
 import MyPage from './MyPage/MyPage';
 import Story from './Story/Story';
 import Recommend from './Recommend/Recommend';
 import ProgramInfo from './ProgramInfo/ProgramInfo';
 import '../Main/Main.scss';
-import '../../../styles/common.scss';
 
 class Main extends React.Component {
   render() {
@@ -21,7 +19,7 @@ class Main extends React.Component {
         />
         <div className="Main">
           <Nav />
-          <main>
+          <main className="foo">
             <section className="container">
               <Feed />
             </section>

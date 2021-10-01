@@ -1,0 +1,21 @@
+.recommend {
+  height: 250px;
+  margin-top: 20px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.recommend-txt {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+}
+
+.recommend-txt p {
+  padding: 15px;
+  cursor: pointer;
+}
+
+.recommend-txt :nth-child(1) {
+  color: #c5c5c5;
+}

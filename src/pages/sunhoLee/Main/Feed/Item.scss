@@ -1,0 +1,121 @@
+.feed {
+  width: 600px;
+  margin-top: 30px;
+  background: #fff;
+  border-radius: 5px;
+  border: 1px solid #c7c7c7;
+
+  .feed-img {
+    width: 100%;
+    max-width: 1000px;
+    overflow: hidden;
+  }
+}
+
+.profile {
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.profile div:first-child {
+  margin-left: 20px;
+}
+
+.profileImg {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  margin: 10px;
+  border: 3px solid transparent;
+  border-radius: 50%;
+  background-image: linear-gradient(#fff, #fff),
+    linear-gradient(to right, red 0%, orange 100%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.profileImg img {
+  position: absolute;
+  width: 90%;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.name {
+  font-weight: bold;
+  line-height: 80px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.more {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 20px;
+  line-height: 80px;
+  cursor: pointer;
+}
+
+.click-line {
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.click-inner {
+  width: 50%;
+  display: flex;
+}
+.click-inner div {
+  width: 10%;
+  margin: 10px 5px;
+  cursor: pointer;
+}
+.click-inner div:nth-child(1) {
+  margin-left: 10px;
+}
+.click-inner div:nth-child(2) {
+  width: 9%;
+  margin-left: 9px;
+}
+
+.save {
+  width: 50%;
+}
+
+.save img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px 10px;
+  width: 4.7%;
+  cursor: pointer;
+}
+
+.comment-view,
+.likeText {
+  padding: 3px 12px;
+}
+
+.subscript {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 10px;
+  padding-bottom: 10px;
+  font-size: 18px;
+
+  h5 {
+    margin-left: 10px;
+  }
+}
+
+.myComment {
+  padding: 0px 10px;
+}

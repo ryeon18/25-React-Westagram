@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CommentList from './CommentList';
+import '../Comment/Comment.scss';
 
 let id = 4;
 
@@ -12,11 +13,11 @@ class Comment extends Component {
     };
   }
 
-  componentDidMount() {
-    this.setState({
-      commentView: this.props.comments,
-    });
-  }
+  // componentDidMount() {
+  //   this.setState({
+  //     commentView: this.props.comments,
+  //   });
+  // }
 
   getCommentValue = e => {
     this.setState({

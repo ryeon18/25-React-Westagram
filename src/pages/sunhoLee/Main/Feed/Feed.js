@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Item from '../Fedd/Item';
+import Item from './Item';
+import '../Feed/Feed.scss';
 
 class Feed extends Component {
   constructor() {
@@ -22,9 +23,10 @@ class Feed extends Component {
   }
 
   render() {
+    const { feedList } = this.state;
     return (
       <div className="contents">
-        {this.state.feedList.map(e => {
+        {feedList.map(e => {
           return (
             <Item
               key={e.id}

@@ -1,0 +1,65 @@
+.comments {
+  position: relative;
+  top: 0px;
+  right: 0;
+}
+
+.newComment {
+  padding-top: 3px;
+}
+
+.date {
+  padding-top: 20px;
+  font-size: 14px;
+  color: #8e8e8e;
+  cursor: pointer;
+}
+
+.write {
+  border-top: 1px solid #8e8e8e44;
+  margin-top: 10px;
+}
+
+.writeInner {
+  display: flex;
+  width: 99%;
+  margin: 0 auto;
+}
+
+.emoticon {
+  flex-grow: 1;
+  text-align: center;
+  line-height: 50px;
+  font-size: 35px;
+  border: none;
+  cursor: pointer;
+}
+
+.commentInput {
+  flex-grow: 20;
+  height: 56px;
+  padding-left: 10px;
+  font-size: 16px;
+  text-overflow: ellipsis;
+  resize: none;
+}
+
+.show_more {
+  color: #ccc;
+  cursor: pointer;
+  padding-left: 6px;
+}
+
+.submit {
+  flex-grow: 1;
+  text-align: center;
+  line-height: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #0095f6;
+  cursor: pointer;
+}
+
+.submit:disabled {
+  color: #0094f656;
+}

@@ -2,7 +2,6 @@ const FEED_DATA = [
   {
     id: 'P1',
     userId: 'dltjsgho',
-    // userImage: 'images/minjiJeong/ocean.jpg',
     feedImage: 'images/sunhoLee/img1.jpeg',
     likedAccount: 'kyeonghoonie',
     likedAccountImage: 'images/sunhoLee/img4.jpeg',
@@ -32,7 +31,6 @@ const FEED_DATA = [
   {
     id: 'P2',
     userId: 'ppringles_',
-    // userImage: 'images/minjiJeong/sun.jpg',
     feedImage: 'images/sunhoLee/img2.jpeg',
     likedAccount: '4yonara',
     likedAccountImage: 'images/sunhoLee/img6.jpeg',
@@ -62,7 +60,6 @@ const FEED_DATA = [
   {
     id: 'P3',
     userId: 'subun.toretta',
-    // userImage: 'images/minjiJeong/chris.jpg',
     feedImage: 'images/sunhoLee/img6.jpeg',
     likedAccount: 'szziin',
     likedAccountImage: 'images/sunhoLee/img.jpeg',

@@ -1,0 +1,30 @@
+.program_info {
+  margin-top: 25px;
+}
+.program_info,
+.program_info ul li a {
+  color: #c5c5c5;
+}
+
+.program_info ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+.program_info ul li {
+  padding: 3px;
+  margin-left: 5px;
+}
+
+.program_info ul li:after {
+  content: '\00B7';
+  margin-left: 5px;
+}
+
+.program_info ul li:last-child::after {
+  content: '';
+}
+
+.program_info p {
+  text-align: left;
+  margin: 25px 10px;
+}
