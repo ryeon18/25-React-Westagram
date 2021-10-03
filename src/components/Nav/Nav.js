@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './Nav.scss';
 import SearchUser from '../../pages/minjiJeong/Main/SearchUser/SearchUser';
 
@@ -13,7 +12,7 @@ class Nav extends React.Component {
 
   render() {
     return (
-      <nav>
+      <nav className="main_header">
         <div className="nav_column">
           <i className="service_logo fab fa-instagram fa-1x"></i>
           <a className="service_name" href="/">
@@ -34,17 +33,13 @@ class Nav extends React.Component {
             className="btn_profile"
             href="/"
             alt="icon_profile"
-            onClick={() => {
-              this.setState({
-                isVisible: !this.state.isVisible,
-              });
-            }}
-            style={{ position: 'relative' }}
+            onClick={() => this.setState({ isVisible: !this.state.isVisible })}
           >
             <img src="images/minjiJeong/profile.png" alt="img_profile" />
             <div
-              className="menu_box"
-              style={{ display: this.state.isVisible ? 'block' : 'none' }}
+              className={`menu_box ${
+                this.state.isVisible ? 'show_menu' : 'hide_menu'
+              }`}
             >
               <div className="menu_box_arrow"></div>
               <div className="menu_box_column">

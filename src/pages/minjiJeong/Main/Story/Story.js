@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Profile from '../Profile/Profile';
+import STORY_DATA from './storyData';
 import './Story.scss';
 
 class Story extends React.Component {
@@ -14,36 +15,18 @@ class Story extends React.Component {
           </Link>
         </div>
         <div className="stories_row">
-          <Profile
-            imageSize="profile_s"
-            image="images/minjiJeong/chris.jpg"
-            userId="yang_chris"
-            description="10분 전"
-          />
-          <Profile
-            imageSize="profile_s"
-            image="images/minjiJeong/acid.png"
-            userId="acid_rain"
-            description="5분 전"
-          />
-          <Profile
-            imageSize="profile_s"
-            image="images/minjiJeong/sun.jpg"
-            userId="before_sunrise"
-            description="33분 전"
-          />
-          <Profile
-            imageSize="profile_s"
-            image="images/minjiJeong/lazer.png"
-            userId="kyeong_hoooonie"
-            description="1시간 전"
-          />
-          <Profile
-            imageSize="profile_s"
-            image="images/minjiJeong/fairy.jpg"
-            userId="fairy_yoon"
-            description="3시간 전"
-          />
+          {STORY_DATA.map(story => {
+            const { id, imageSize, image, userId, description } = story;
+            return (
+              <Profile
+                key={id}
+                imageSize={imageSize}
+                image={image}
+                userId={userId}
+                description={description}
+              />
+            );
+          })}
         </div>
       </div>
     );

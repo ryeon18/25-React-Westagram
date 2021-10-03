@@ -26,18 +26,29 @@ class Feed extends React.Component {
     return (
       <div className="articles_area">
         {/* FeedItem 엘리먼트 생성 */}
-        {this.state.feedList.map(el => {
+        {this.state.feedList.map(feed => {
+          const {
+            id,
+            userId,
+            userImage,
+            feedImage,
+            likedAccount,
+            likedAccountImage,
+            like,
+            content,
+          } = feed;
+
           return (
             <FeedItem
-              key={el.id}
-              feedId={el.id}
-              userId={el.userId}
-              userImage={el.userImage}
-              feedImage={el.feedImage}
-              likedAccount={el.likedAccount}
-              likedAccountImage={el.likedAccountImage}
-              like={el.like}
-              content={el.content}
+              key={id}
+              feedId={id}
+              userId={userId}
+              userImage={userImage}
+              feedImage={feedImage}
+              likedAccount={likedAccount}
+              likedAccountImage={likedAccountImage}
+              like={like}
+              content={content}
             />
           );
         })}

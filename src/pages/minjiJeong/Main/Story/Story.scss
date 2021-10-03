@@ -1,4 +1,10 @@
-@import '../Main.scss';
+@import '../../../../styles/variable.scss';
+
+@mixin flex-space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .new_stories {
   width: 100%;
@@ -11,7 +17,9 @@
 }
 
 .stories_header {
-  @include flex-space-between;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   position: sticky;
   top: 0;
   flex-direction: row;

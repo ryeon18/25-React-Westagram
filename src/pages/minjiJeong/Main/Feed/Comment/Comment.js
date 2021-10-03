@@ -30,14 +30,13 @@ class Comment extends React.Component {
   };
 
   uploadComment = e => {
-    this.state.commentList.push({
+    const newCommentList = this.state.commentList.concat({
       id: id,
-      userId: '_minji.jeong',
+      userId: '_minji.Jeong',
       content: this.state.content,
       isLiked: false,
     });
-
-    this.setState({ content: '' });
+    this.setState({ commentList: newCommentList, content: '' });
     id++;
   };
 
@@ -50,10 +49,12 @@ class Comment extends React.Component {
   };
 
   removeComment = id => {
-    const newArr = this.state.commentList.filter(item => item.id !== id);
+    const deletedCommentList = this.state.commentList.filter(
+      item => item.id !== id
+    );
 
     this.setState({
-      commentList: newArr,
+      commentList: deletedCommentList,
     });
   };
 
@@ -71,14 +72,15 @@ class Comment extends React.Component {
       <>
         <div className="article_comments">
           {/* 추가될 댓글 위치 */}
-          {this.state.commentList.map(el => {
+          {this.state.commentList.map(comment => {
+            const { id, userId, content, isLiked } = comment;
             return (
               <CommentList
-                key={el.id}
-                id={el.id}
-                userId={el.userId}
-                content={el.content}
-                isLiked={el.isLiked}
+                key={id}
+                id={id}
+                userId={userId}
+                content={content}
+                isLiked={isLiked}
                 toggleLike={this.toggleLike}
                 removeComment={this.removeComment}
               />

@@ -1,6 +1,6 @@
-@import '../../pages/minjiJeong/Main/Main.scss';
+@import '../../styles/variable.scss';
 
-nav {
+.main_header {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -14,29 +14,77 @@ nav {
   z-index: 1;
 }
 
-.service_logo {
-  padding-top: 5px;
-  transform: scale(1.6);
-}
-
-.service_name {
-  margin-left: 15px;
-  padding-left: 15px;
-  font-family: 'Satisfy', cursive;
-  font-size: 20px;
-  font-weight: bold;
-  border-left: 2px solid black;
-}
-
 .nav_column {
   position: relative;
-}
 
-.nav_column {
+  .service_logo {
+    padding-top: 5px;
+    transform: scale(1.6);
+  }
+
+  .service_name {
+    margin-left: 15px;
+    padding-left: 15px;
+    font-family: 'Satisfy', cursive;
+    font-size: 20px;
+    font-weight: bold;
+    border-left: 2px solid black;
+  }
+
   button {
     img {
       width: 26px;
       margin: 0 5px;
+    }
+  }
+
+  .btn_profile {
+    position: relative;
+  }
+
+  .menu_box {
+    width: 230px;
+    position: absolute;
+    height: fit-content;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    top: 45px;
+    right: -14px;
+  }
+
+  .show_menu {
+    display: block;
+  }
+
+  .hide_menu {
+    display: none;
+  }
+
+  .menu_box_arrow {
+    position: absolute;
+    top: -8px;
+    width: 15px;
+    height: 15px;
+    transform: rotate(45deg);
+    background-color: #ffffff;
+    box-shadow: -1px -1px 2px 0px $theme-color-border;
+    z-index: -1;
+    right: 30px;
+  }
+
+  .menu_box_column {
+    padding: 14px 20px;
+    font-size: 14px;
+    text-align: left;
+    i {
+      transform: scale(1.2);
+      margin-right: 10px;
+    }
+
+    &:last-child {
+      border-top: 1px solid rgba(0, 0, 0, 0.2);
     }
   }
 }

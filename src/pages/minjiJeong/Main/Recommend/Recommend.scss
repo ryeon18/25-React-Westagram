@@ -1,4 +1,10 @@
-@import '../Main.scss';
+@import '../../../../styles/variable.scss';
+
+@mixin flex-space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .recommend_friends {
   width: 100%;

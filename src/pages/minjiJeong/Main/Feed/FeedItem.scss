@@ -1,4 +1,16 @@
-@import '../Main.scss';
+@import '../../../../styles/variable.scss';
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .article {
   margin-bottom: 50px;
@@ -60,23 +72,22 @@
   h5 {
     @include flex-center;
     margin-left: 8px;
+    font-weight: normal;
   }
-}
 
-.user_id {
-  font-weight: 600;
-  margin-right: 3px;
-}
-
-.like_count {
-  font-weight: 600;
-}
-
-.article_subscript {
   img {
     border: 2px solid $theme-color-border;
     object-fit: cover;
   }
+}
+
+.user_id {
+  margin-right: 3px;
+  font-weight: 600;
+}
+
+.like_count {
+  font-weight: 600;
 }
 
 .article_text {

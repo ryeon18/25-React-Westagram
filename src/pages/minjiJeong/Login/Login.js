@@ -1,6 +1,4 @@
 import React from 'react';
-import '../../../styles/reset.scss';
-import '../../../styles/common.scss';
 import '../Login/Login.scss';
 import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
@@ -11,20 +9,12 @@ class Login extends React.Component {
     this.state = {
       idValue: '',
       pwValue: '',
-      phone: '010-9945-7580',
-      name: 'minjiJeong',
     };
   }
 
-  handleId = e => {
+  handleInput = e => {
     this.setState({
-      idValue: e.target.value,
-    });
-  };
-
-  handlePw = e => {
-    this.setState({
-      pwValue: e.target.value,
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -37,8 +27,8 @@ class Login extends React.Component {
     //   body: JSON.stringify({
     //     email: this.state.idValue,
     //     password: this.state.pwValue,
-    //     phone: this.state.phone,
-    //     name: this.state.name,
+    //     phone: '010-5454-4897',
+    //     name: 'minjiJeong',
     //   })
     //     .then(response => response.json())
     //     .then(response => {
@@ -54,35 +44,35 @@ class Login extends React.Component {
 
   render() {
     // 로그인 유효성 검사
-    const enableBtn =
+    const isBtnEnabled =
       this.state.idValue.includes('@') && this.state.pwValue.length >= 5;
 
     return (
-      <div className="container">
+      <div className="login_container">
         <p id="logo">Westagram</p>
         <form className="login_form">
           <input
             className="login login_id"
-            id="user_id"
+            name="idValue"
             type="text"
             autoComplete="off"
             placeholder="전화번호, 사용자 이름 또는 이메일"
             value={this.state.idValue}
-            onChange={this.handleId}
+            onChange={this.handleInput}
           />
           <input
             className="login login_pw"
-            id="user_pw"
+            name="pwValue"
             type="password"
             autoComplete="off"
             placeholder="비밀번호"
             value={this.state.pwValue}
-            onChange={this.handlePw}
+            onChange={this.handleInput}
           />
           <button
-            className={`loginBtn ${enableBtn ? 'activeBtn' : 'disableBtn'}`}
+            className={`loginBtn ${isBtnEnabled ? 'activeBtn' : 'disableBtn'}`}
             type="button"
-            disabled={!enableBtn}
+            disabled={!isBtnEnabled}
             onClick={this.handleLogin}
           >
             로그인

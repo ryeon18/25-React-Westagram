@@ -1,7 +1,7 @@
-@import '../Main.scss';
-
 .show_account {
-  @include flex-space-between;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   flex-direction: row;
   padding-left: 4px;
   margin: 8px 0px;
