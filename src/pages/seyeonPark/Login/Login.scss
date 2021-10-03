@@ -1,6 +1,6 @@
 @import '../../../styles/variable.scss';
 
-.loginContainer {
+.login {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,6 +23,10 @@
       font-weight: bold;
       font-family: 'Lobster', cursive;
     }
+    span {
+      margin: 50px 0 20px 0;
+      color: #55789a;
+      font-size: 13px;
   }
   
   .logininput {
@@ -58,9 +62,4 @@
     font-size: 15px;
     background-color: #0000ff;
   }
-  
-  .container span {
-    margin: 50px 0 20px 0;
-    color: #55789a;
-    font-size: 13px;
-  }
+}

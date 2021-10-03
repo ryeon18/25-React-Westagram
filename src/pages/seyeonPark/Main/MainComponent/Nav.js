@@ -7,10 +7,7 @@ class Nav extends React.Component {
         <div className="mainLogoContainer">
           <div className="logo">
             <a className="logoimg" href="/login-seyeon">
-              <img
-                alt="instagramLogo"
-                src="../../images/seyeonPark/instagram.png"
-              />
+              <img alt="instagramLogo" src="/images/seyeonPark/instagram.png" />
             </a>
           </div>
           <a className="h1" href="/">
@@ -26,12 +23,12 @@ class Nav extends React.Component {
           />
         </div>
         <div className="manuIcons">
-          <img alt="explore" src="../../images/seyeonPark/explore.png" />
+          <img alt="explore" src="/images/seyeonPark/explore.png" />
           <a href="/">
-            <img alt="like" src="../../images/seyeonPark/heart.png" />
+            <img alt="like" src="/images/seyeonPark/heart.png" />
           </a>
           <a href="/">
-            <img alt="profile" src="../../images/seyeonPark/profile.png" />
+            <img alt="profile" src="/images/seyeonPark/profile.png" />
           </a>
         </div>
       </nav>

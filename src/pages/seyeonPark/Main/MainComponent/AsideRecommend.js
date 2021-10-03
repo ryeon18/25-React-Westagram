@@ -13,7 +13,7 @@ class AsideStory extends React.Component {
             <img
               className="sideprofileimge2"
               alt="sideprofileimg"
-              src="../../images/seyeonPark/profile2.jpeg"
+              src="/images/seyeonPark/profile2.jpeg"
             />
             <div className="userInfo2">
               <p>
@@ -31,7 +31,7 @@ class AsideStory extends React.Component {
             <img
               className="sideprofileimge2"
               alt="sideprofileimg"
-              src="../../images/seyeonPark/profile3.jpeg"
+              src="/images/seyeonPark/profile3.jpeg"
             />
             <div className="userInfo2">
               <p>
@@ -49,7 +49,7 @@ class AsideStory extends React.Component {
             <img
               className="sideprofileimge2"
               alt="sideprofileimg"
-              src="../../images/seyeonPark/profile4.jpeg"
+              src="/images/seyeonPark/profile4.jpeg"
             />
             <div className="userInfo2">
               <p>

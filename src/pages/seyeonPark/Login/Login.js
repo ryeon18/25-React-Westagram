@@ -8,7 +8,6 @@ class Login extends React.Component {
     this.state = {
       inputIdValue: '',
       inputPwValue: '',
-      isButtonOn: false,
     };
   }
   // 이벤트 핸들러가 제대로 불리는지 콘솔로 꼭 찍어보기
@@ -20,10 +19,10 @@ class Login extends React.Component {
   };
 
   changeButton = () => {
-    this.state.inputIdValue.indexOf('@') !== -1 &&
-    this.state.inputPwValue.length >= 5
-      ? this.setState({ isButtonOn: true })
-      : this.setState({ isButtonOn: false });
+    const { inputIdValue, inputPwValue } = this.state;
+    this.setState({
+      isButtonOn: inputIdValue.indexOf('@') !== -1 && inputPwValue.length >= 5,
+    });
   };
 
   goToMain = () => {
@@ -33,14 +32,14 @@ class Login extends React.Component {
   render() {
     const { isButtonOn } = this.state;
     return (
-      <div className="loginContainer">
+      <div className="login">
         <main className="container">
           <h1>Westagram</h1>
           <LoginBox onChange={this.handleInput} changeBtn={this.changeButton} />
           <button
             className={isButtonOn ? 'changeBtnColor' : 'button'}
             onClick={this.goToMain}
-            disabled={isButtonOn ? false : true}
+            disabled={!isButtonOn}
           >
             로그인
           </button>

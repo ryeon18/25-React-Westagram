@@ -7,80 +7,18 @@ import Footer from '../Main/MainComponent/Footer';
 import '../../../pages/seyeonPark/Main/Main.scss';
 
 class Main extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      commentBox: [],
-      comment: '',
-      isHaertChange: false,
-    };
-  }
-
-  componentDidMount() {
-    fetch('http://localhost:3000/data/commentDataSeyeon.json', {
-      method: 'GET',
-    })
-      .then(res => res.json())
-      .then(data => {
-        this.setState({ commentBox: data });
-      });
-  }
-
-  changeHeartColor = () => {
-    const { isHeartChange } = this.state;
-    this.setState({
-      isHeartChange: !isHeartChange,
-    });
-  };
-
-  getInputValue = e => {
-    this.setState({
-      comment: e.target.value,
-    });
-  };
-
-  uploadComment = () => {
-    const { commentBox, comment } = this.state;
-    if (comment.length === 0) return;
-    const newCommentBox = [
-      ...commentBox,
-      {
-        id: commentBox.length + 1,
-        userId: '12시에 만나요 부라보콘 ',
-        content: comment,
-      },
-    ];
-    this.setState({ commentBox: newCommentBox, comment: '' });
-  };
-
-  enterEvent = e => {
-    // const { comment } = this.state;
-    if (e.key === 'Enter') {
-      this.uploadComment();
-    }
-  };
-
   render() {
-    const { commentBox, comment, isHeartChange } = this.state;
     return (
       <div className="mainContainer">
         <Nav />
         <main>
-          <Feed
-            commentBox={commentBox}
-            comment={comment}
-            isHeartChange={isHeartChange}
-            uploadComment={this.uploadComment}
-            getInputValue={this.getInputValue}
-            enterEvent={this.enterEvent}
-            changeHeartColor={this.changeHeartColor}
-          />
+          <Feed />
           <section className="main-right">
             <article className="sideUser">
               <img
                 className="sideprofileimg"
                 alt="sideprofileimage"
-                src="../../images/seyeonPark/profile1.jpeg"
+                src="/images/seyeonPark/profile1.jpeg"
               />
               <div className="userInfo">
                 <a className="sideId" href="/">

@@ -79,11 +79,20 @@
   }
   
   /* --피드-- */
+
+  .feedContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 60%;
+  }
+
+  .feedBox {
+    padding-bottom: 50px;
+  }
   
   .feed {
     border: 1px solid #ebebeb;
-    width: 60%;
-    flex-direction: column;
   }
   
   /*  피드 헤드 */
