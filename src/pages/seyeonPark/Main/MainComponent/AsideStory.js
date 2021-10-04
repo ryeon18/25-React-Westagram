@@ -11,7 +11,7 @@ class AsideStory extends React.Component {
         </section>
         <section className="otherStoryList">
           {STORY_DATA.map(el => (
-            <section className="storyuser">
+            <section className="storyuser" key={el.id}>
               <img
                 className="sideprofileimge2"
                 alt="otherUserImg"

@@ -16,7 +16,7 @@ class Comment extends React.Component {
                 alt="checkingHeart"
                 src="/images/seyeonPark/heart-regular.svg"
                 width="12px"
-                className={isHeartChange ? 'likeHeart' : false}
+                className={isHeartChange ? 'likeHeart' : 'isHeartChange'}
               />
             </button>
           </li>
