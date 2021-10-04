@@ -1,0 +1,18 @@
+@mixin flex($space) {
+  display: flex;
+  justify-content: $space;
+  align-items: center;
+}
+.commentLsit {
+  @include flex(space-between);
+
+  .comments_menu {
+    @include flex(center);
+    cursor: pointer;
+
+    .delete {
+      font-size: 18px;
+      padding-left: 10px;
+    }
+  }
+}

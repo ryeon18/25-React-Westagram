@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import Profile from '../Profile/Profile';
+import STORY_DATA from '../Story/Story_Data';
 import '../Story/Story.scss';
 
 class Story extends Component {
@@ -7,43 +10,23 @@ class Story extends Component {
       <div className="story">
         <div className="story-txt">
           <p>스토리</p>
-          <p>모두 보기</p>
+          <Link to="/">
+            <p>모두 보기</p>
+          </Link>
         </div>
-        <div className="people">
-          <div className="people-img img-box">
-            <img src="/images/sunhoLee/img6.jpeg" alt="images" />
-          </div>
-          <div className="people-name">
-            <p>dltjsgho</p>
-            <p>이선호</p>
-          </div>
-        </div>
-        <div className="people">
-          <div className="people-img img-box">
-            <img src="/images/sunhoLee/img4.jpeg" alt="images" />
-          </div>
-          <div className="people-name">
-            <p>dltjsgho</p>
-            <p>이선호</p>
-          </div>
-        </div>
-        <div className="people">
-          <div className="people-img img-box">
-            <img src="/images/sunhoLee/img.jpeg" alt="images" />
-          </div>
-          <div className="people-name">
-            <p>wecode</p>
-            <p>위코드</p>
-          </div>
-        </div>
-        <div className="people">
-          <div className="people-img img-box">
-            <img src="/images/sunhoLee/img7.jpeg" alt="images" />
-          </div>
-          <div className="people-name">
-            <p>dltjsgho</p>
-            <p>이선호</p>
-          </div>
+        <div className="story-inner">
+          {STORY_DATA.map(data => {
+            const { id, userId, image, description } = data;
+            return (
+              <Profile
+                key={id}
+                id={id}
+                userId={userId}
+                image={image}
+                description={description}
+              />
+            );
+          })}
         </div>
       </div>
     );

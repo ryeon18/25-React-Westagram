@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import Profile from '../Profile/Profile';
+import RECOMMEND_DATA from '../Recommend/Recommend_Data';
 import '../Recommend/Recommend.scss';
 
 class Recommend extends Component {
@@ -7,34 +10,21 @@ class Recommend extends Component {
       <div className="recommend">
         <div className="recommend-txt">
           <p>회원님을 위한 추천</p>
-          <p>모두 보기</p>
+          <Link to="/">
+            <p>모두 보기</p>
+          </Link>
         </div>
-        <div className="people">
-          <div className="people-img img-box">
-            <img src="/images/sunhoLee/img7.jpeg" alt="images" />
-          </div>
-          <div className="people-name">
-            <p>dltjsgho</p>
-            <p>이선호</p>
-          </div>
-        </div>
-        <div className="people">
-          <div className="people-img img-box">
-            <img src="/images/sunhoLee/img7.jpeg" alt="images" />
-          </div>
-          <div className="people-name">
-            <p>dltjsgho</p>
-            <p>이선호</p>
-          </div>
-        </div>
-        <div className="people">
-          <div className="people-img img-box">
-            <img src="/images/sunhoLee/img7.jpeg" alt="images" />
-          </div>
-          <div className="people-name">
-            <p>dltjsgho</p>
-            <p>이선호</p>
-          </div>
+        <div className="recommend_inner">
+          {RECOMMEND_DATA.map(data => {
+            return (
+              <Profile
+                id={data.id}
+                userId={data.userId}
+                image={data.image}
+                recommend={data.recommend}
+              />
+            );
+          })}
         </div>
       </div>
     );

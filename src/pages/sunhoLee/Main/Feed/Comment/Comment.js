@@ -13,11 +13,11 @@ class Comment extends Component {
     };
   }
 
-  // componentDidMount() {
-  //   this.setState({
-  //     commentView: this.props.comments,
-  //   });
-  // }
+  componentDidMount() {
+    this.setState({
+      commentView: this.props.comments,
+    });
+  }
 
   getCommentValue = e => {
     this.setState({
@@ -27,15 +27,25 @@ class Comment extends Component {
 
   uploadComment = e => {
     if (this.state.comments.length > 0) {
-      this.state.commentView.push({
-        id: id,
+      const newComment = this.state.commentView.concat({
+        id: Date.now(),
         userId: 'dltjsgho',
         content: this.state.comments,
       });
-
       id++;
+      this.setState({ commentView: newComment, comments: '' });
     }
-    this.setState({ comments: '' });
+  };
+
+  removeComment = id => {
+    const deletedComment = this.state.commentView.filter(
+      item => item.id !== id
+    );
+
+    this.setState({
+      commentView: deletedComment,
+    });
+    console.log('>>>>');
   };
 
   handleEnter = e => {
@@ -47,17 +57,19 @@ class Comment extends Component {
   };
 
   render() {
-    console.log(this.props.comments);
     return (
       <>
         <div className="comment-view">
           <ul className="comments">
-            {this.state.commentView.map(el => {
+            {this.state.commentView.map(comment => {
+              const { id, userId, content } = comment;
               return (
                 <CommentList
-                  key={el.id}
-                  userId={el.userId}
-                  content={el.content}
+                  key={id}
+                  id={id}
+                  userId={userId}
+                  content={content}
+                  removeComment={this.removeComment}
                 />
               );
             })}

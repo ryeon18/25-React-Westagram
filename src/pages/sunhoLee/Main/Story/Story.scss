@@ -12,44 +12,12 @@
   height: 50px;
 }
 
-.story-txt p,
-.recommend-txt p {
+.story-txt p {
   padding: 15px;
   cursor: pointer;
-}
-
-.story-txt :first-child {
   color: #c5c5c5;
 }
 
-.people {
-  display: flex;
-  width: 100%;
-  padding-left: 10px;
-}
-
-.people-img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin: 8px;
-  overflow: hidden;
-}
-
-.people-name {
-  width: 20%;
-  text-align: left;
-}
-
-.people-name p {
-  padding: 2px;
-}
-
-.people-name p:first-child {
-  margin-top: 10px;
-  font-weight: bold;
-}
-
-.people-name p:last-child {
-  color: #8e8e8e;
+.story-txt p:last-child {
+  color: black;
 }

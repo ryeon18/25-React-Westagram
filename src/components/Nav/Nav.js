@@ -7,7 +7,7 @@ class Nav extends React.Component {
       <nav className="nav">
         <div className="wrap">
           <div className="logo">
-            <a href="main.html">Westagram</a>
+            <a href="http://localhost:3001/main.html">Westagram</a>
           </div>
           <div className="search">
             <input type="text" id="searchTxt" placeholder="검색" />
