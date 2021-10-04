@@ -14,9 +14,9 @@ class Comment extends React.Component {
             <button onClick={changeHeartColor}>
               <img
                 alt="checkingHeart"
-                src="/images/seyeonPark/heart.png"
+                src="/images/seyeonPark/heart-regular.svg"
                 width="12px"
-                className={isHeartChange ? 'likeHeart' : 'unlikeHeart'}
+                className={isHeartChange ? 'likeHeart' : false}
               />
             </button>
           </li>

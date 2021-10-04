@@ -1,4 +1,5 @@
 import React from 'react';
+import RECOMEMED_DATA from './asideRecommendData';
 
 class AsideStory extends React.Component {
   render() {
@@ -9,60 +10,28 @@ class AsideStory extends React.Component {
           <span className="showAll">모두 보기</span>
         </section>
         <section className="sideRecommendList">
-          <section className="recommendUser">
-            <img
-              className="sideprofileimge2"
-              alt="sideprofileimg"
-              src="/images/seyeonPark/profile2.jpeg"
-            />
-            <div className="userInfo2">
-              <p>
-                <a className="sideId" href="/">
-                  sleepy
-                </a>
-              </p>
-              <span>언제나졸려님 외 3명이 좋아합니다</span>
-            </div>
-            <div className="followButton">
-              <a href="/">팔로우</a>
-            </div>
-          </section>
-          <section className="recommendUser">
-            <img
-              className="sideprofileimge2"
-              alt="sideprofileimg"
-              src="/images/seyeonPark/profile3.jpeg"
-            />
-            <div className="userInfo2">
-              <p>
-                <a className="sideId" href="/">
-                  오혁-소녀
-                </a>
-              </p>
-              <span>노래는좋아님 외 2명이 좋아합니다</span>
-            </div>
-            <div className="followButton">
-              <a href="/">팔로우</a>
-            </div>
-          </section>
-          <section className="recommendUser">
-            <img
-              className="sideprofileimge2"
-              alt="sideprofileimg"
-              src="/images/seyeonPark/profile4.jpeg"
-            />
-            <div className="userInfo2">
-              <p>
-                <a className="sideId" href="/">
-                  이구이-아마도
-                </a>
-              </p>
-              <span>뚜루뚜룹빠빠노래님 외 22명이 좋아합니다</span>
-            </div>
-            <div className="followButton">
-              <a href="/">팔로우</a>
-            </div>
-          </section>
+          {RECOMEMED_DATA.map(el => (
+            <section className="recommendUser" key={el.id}>
+              <img
+                className="sideprofileimge2"
+                alt="sideprofileimg"
+                src={el.img}
+              />
+              <div className="userInfo2">
+                <p>
+                  <a className="sideId" href="/">
+                    {el.userId}
+                  </a>
+                </p>
+                <span>
+                  {el.likedUserId}님 외 {el.likeCount}명이 좋아합니다
+                </span>
+              </div>
+              <div className="followButton">
+                <a href="/">팔로우</a>
+              </div>
+            </section>
+          ))}
         </section>
       </article>
     );
