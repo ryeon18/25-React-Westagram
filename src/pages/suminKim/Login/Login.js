@@ -33,8 +33,7 @@ class Login extends React.Component {
     });
   };
   buttonChange = () => {
-    const { idValue } = this.state;
-    const { pwValue } = this.state;
+    const { idValue, pwValue } = this.state;
 
     this.setState({
       buttonOn:
