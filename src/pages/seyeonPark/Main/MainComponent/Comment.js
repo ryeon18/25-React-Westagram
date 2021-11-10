@@ -62,7 +62,6 @@ class Comment extends React.Component {
 
   render() {
     const { commentBox, comment } = this.state;
-    console.log('props', this.state);
     return (
       <div className="thirdMessage">
         {commentBox.map(comment => {

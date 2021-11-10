@@ -19,8 +19,6 @@ const CurrentTime = () => {
     };
   }, []);
 
-  // const hour = {time.toLocaleString().split('0')[0]}
-
   return (
     <TimeTable
       hour={time.toLocaleString().split(':')[0]}
