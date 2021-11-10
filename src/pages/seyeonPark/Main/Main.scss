@@ -14,7 +14,7 @@
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
-  height: 7%;
+  height: 50px;
   border-bottom: 1px solid $theme-color-border;
   background-color: white;
 }
@@ -25,16 +25,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  .timeTable {
+    padding: 5px;
+    font-size: 13px;
+  }
 }
 
 .logo {
   display: inline;
-  padding-right: 10px;
+  ::after {
+    content: '|';
+    font-size: 23px;
+    padding-left: 10px;
+  }
 }
 
 .h1 {
-  padding-left: 10px;
-  border-left: 1px solid black;
   font-family: 'Lobster', cursive;
   font-weight: bold;
   font-size: 20px;
@@ -64,7 +70,6 @@
 
   a {
     padding: 5px;
-    padding-left: 10px;
   }
 }
 
@@ -163,22 +168,16 @@ main {
   align-items: center;
   text-align: center;
   padding: 12px;
-
-  button {
-    border: none;
-    background-color: #fafafa;
-  }
 }
 
 /* 피드 좋아요 구간 */
 
 .feedComment {
-  padding: 10px;
   font-size: 12px;
 }
 
 .likeCheck {
-  padding-bottom: 20px;
+  padding: 5px 5px 0;
 }
 
 .message {
@@ -191,7 +190,7 @@ main {
 
 .moreComment,
 .commentTime {
-  padding-top: 4px;
+  padding: 5px;
   text-decoration: none;
   font-weight: normal;
   color: #a7a7a7;
@@ -209,8 +208,25 @@ main {
   align-items: center;
 }
 
-.likeHeart {
-  background-color: red;
+.commentList {
+  padding-bottom: 3px;
+}
+
+.commentContent {
+  width: 90%;
+}
+
+.commentIcon {
+  i {
+    padding-right: 5px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.changedColor {
+  color: red;
 }
 
 /* 댓글창 */
@@ -219,7 +235,6 @@ main {
   display: flex;
   justify-content: space-evenly;
   border-top: 1px solid #ebebeb;
-  border-bottom: 1px solid $theme-color-border;
 }
 
 .input {
@@ -245,13 +260,13 @@ main {
 
 .thirdMessage {
   display: flex;
-  width: 398px;
+  flex-direction: column;
 
   li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 398px;
+    padding: 5px 5px 0;
   }
 
   span {

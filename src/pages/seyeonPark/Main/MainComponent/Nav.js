@@ -1,4 +1,5 @@
 import React from 'react';
+import CurrentTime from './CurrentTime';
 
 class Nav extends React.Component {
   render() {
@@ -7,12 +8,17 @@ class Nav extends React.Component {
         <div className="mainLogoContainer">
           <div className="logo">
             <a className="logoimg" href="/login-seyeon">
-              <img alt="instagramLogo" src="/images/seyeonPark/instagram.png" />
+              <img
+                alt="instagramLogo"
+                src="/images/seyeonPark/instagram.png"
+                className="logoimage"
+              />
             </a>
           </div>
           <a className="h1" href="/">
             Westagram
           </a>
+          <CurrentTime />
         </div>
         <div className="search">
           <input type="search" placeholder="검색" />

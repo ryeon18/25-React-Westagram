@@ -1,11 +1,14 @@
 [
-    {
-      "id": 1,
-      "userId": "장범준 ",
-      "content": "회상"
-    },
-    { "id": 2,
-      "userId": "카더가든 ",
-      "content": "우리의 밤을 외워요"
-    }
-  ]
+  {
+    "id": 1,
+    "userId": "장범준 ",
+    "content": "회상",
+    "liked": false
+  },
+  {
+    "id": 2,
+    "userId": "카더가든 ",
+    "content": "우리의 밤을 외워요",
+    "liked": false
+  }
+]

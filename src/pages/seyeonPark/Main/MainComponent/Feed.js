@@ -21,16 +21,26 @@ class Feed extends React.Component {
     return (
       <div className="feedContainer">
         {feedList.map(el => {
+          const {
+            id,
+            feedUserImg,
+            feedUserId,
+            feedImg,
+            likeUserId,
+            likeAmount,
+            commentBox,
+          } = el;
           return (
-            <div key={el.id} className="feedBox">
+            <div key={id} className="feedBox">
               <div className="feed">
                 <FeedItem
-                  feedUserId={el.feedUserId}
-                  feedUserImg={el.feedUserImg}
-                  feedImg={el.feedImg}
-                  likeUserId={el.likeUserId}
-                  likeAmount={el.likeAmount}
-                  commentBox={el.commentBox}
+                  feedId={id}
+                  feedUserId={feedUserId}
+                  feedUserImg={feedUserImg}
+                  feedImg={feedImg}
+                  likeUserId={likeUserId}
+                  likeAmount={likeAmount}
+                  commentBox={commentBox}
                 />
               </div>
             </div>
