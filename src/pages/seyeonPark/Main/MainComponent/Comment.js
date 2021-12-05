@@ -12,7 +12,7 @@ class Comment extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/data/commentDataSeyeon.json')
+    fetch('/data/commentDataSeyeon.json')
       .then(res => res.json())
       .then(data => {
         this.setState({ commentBox: data });

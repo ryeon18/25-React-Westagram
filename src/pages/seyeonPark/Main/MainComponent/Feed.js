@@ -10,7 +10,7 @@ class Feed extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/data/feedDataSeyeon.json')
+    fetch('/data/feedDataSeyeon.json')
       .then(res => res.json())
       .then(data => {
         this.setState({ feedList: data });
