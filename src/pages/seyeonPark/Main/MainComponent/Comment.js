@@ -31,7 +31,7 @@ class Comment extends React.Component {
     const newCommentBox = [
       ...commentBox,
       {
-        id: commentBox.length + 1,
+        id: commentBox[commentBox.length - 1].id + 1,
         userId: '12시에 만나요 부라보콘 ',
         content: comment,
         isLiked: false,
