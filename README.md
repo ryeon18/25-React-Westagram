@@ -12,7 +12,7 @@
 
 ## 구현목표
 ### 로그인 페이지
-   - [x] 로그인 유효성 검사 여부에 따른 버튼 활성화 <br/>
+   - [x] 로그인 유효성 검사에 따른 버튼 활성화 여부 <br/>
 ![로그인 페이지](https://user-images.githubusercontent.com/62207127/145967533-8493adde-d248-40e4-a86c-1f42fbaca4ed.gif)
 ### 메인 페이지
    - [x] Mock data를 이용하여 feed, comment 데이터 구현
