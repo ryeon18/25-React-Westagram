@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "feedUserId": "Emily_sy",
+    "feedUserImg": "images/seyeonPark/feedidimg.jpeg",
+    "feedImg": "images/seyeonPark/main.jpeg",
+    "likeUserId": "nature ",
+    "likeAmount": 960,
+    "commentBox": [
+      { "id": 1, "userId": "myroom ", "content": "진정한 힐링은 집에서!" }
+    ]
+  },
+  {
+    "id": 2,
+    "feedUserId": "Chris",
+    "feedUserImg": "images/seyeonPark/feedidimg.jpeg",
+    "feedImg": "images/seyeonPark/main2.png",
+    "likeUserId": "Emily",
+    "likeAmount": 100,
+    "commentBox": [{ "id": 2, "userId": "우와 ", "content": "안녕하세요." }]
+  }
+]
