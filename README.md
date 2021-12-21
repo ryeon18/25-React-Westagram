@@ -16,5 +16,5 @@
 ![로그인 페이지](https://user-images.githubusercontent.com/62207127/145967533-8493adde-d248-40e4-a86c-1f42fbaca4ed.gif)
 ### 메인 페이지
    - [x] Mock data를 이용하여 feed, comment 데이터 구현
-   - [x] 댓글 좋아요, 삭제 추가구현 (2021.11.11)<br/>
+   - [x] 댓글 좋아요, 삭제 기능을 map과 filter method를 통해 추가구현 (2021.11.11)<br/>
 ![ezgif com-gif-maker22](https://user-images.githubusercontent.com/62207127/145967832-82149aea-067e-470d-8627-861beaa15fe1.gif)
